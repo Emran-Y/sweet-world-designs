@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweet World homepage on a phone</title>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#8A4016}a:hover{color:#5E2A0C}
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 4950px; box-sizing: border-box; background: #FBF8F3; color: #24160F; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.5; position: relative">
+
+<!-- Header -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #EADFD2; height: 64px; padding: 0 12px 0 20px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2">
+<a href="#m-top" aria-label="Sweet World home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #24160F">
+<svg aria-hidden="true" width="28" height="32" viewBox="0 0 34 38" fill="none"><path d="M17 2l14 8.2v17.6L17 36 3 27.8V10.2L17 2z" stroke="#E9B44C" stroke-width="2.500"/><circle cx="17" cy="19" r="5" fill="#24160F"/></svg>
+<span style="font-family: Outfit, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; line-height: 1">SWEET <span style="font-weight: 500; font-size: 13px; letter-spacing: 0.14em">WORLD</span></span>
+</a>
+<div style="display: flex; align-items: center">
+<a href="#m-shop" aria-label="Cart, 2 items" style="position: relative; width: 44px; height: 44px; color: #24160F; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+<span style="position: absolute; top: 3px; right: 1px; min-width: 18px; height: 18px; border-radius: 9px; background: #8A4016; color: #FFFFFF; font-size: 11px; font-weight: 600; line-height: 18px; text-align: center">2</span>
+</a>
+<button onClick="{{toggleMenu}}" aria-label="{{menuLabel}}" aria-expanded="{{menuOpen}}" style="width: 44px; height: 44px; border: 0; background: transparent; color: #24160F; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{true}}">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+</sc-if>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</sc-if>
+</button>
+</div>
+</header>
+
+<!-- Mobile menu panel -->
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<nav aria-label="Main" style="position: absolute; left: 0; right: 0; top: 65px; z-index: 3; background: #FFFFFF; border-bottom: 1px solid #EADFD2; box-shadow: 0 24px 40px rgba(36, 22, 15, 0.18); padding: 12px 20px 24px; display: flex; flex-direction: column">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500; color: #5C4A3E; margin-bottom: 8px">Search
+<input type="search" placeholder="Chocolate, coffee, gifts" style="height: 48px; border-radius: 999px; border: 1px solid #C9B8A6; padding: 0 18px; font-size: 16px; background: #FBF8F3; color: #24160F; box-sizing: border-box; width: 100%">
+</label>
+<a href="#m-menu" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0; border-bottom: 1px solid #EADFD2">Menu</a>
+<a href="#m-shop" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0; border-bottom: 1px solid #EADFD2">Shop</a>
+<a href="#m-subs" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0; border-bottom: 1px solid #EADFD2">Subscriptions</a>
+<a href="#m-story" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0; border-bottom: 1px solid #EADFD2">Our story</a>
+<a href="#m-visit" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0; border-bottom: 1px solid #EADFD2">Locations</a>
+<a href="#m-footer" style="color: #24160F; text-decoration: none; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px; padding: 14px 0">Contact</a>
+<div style="display: flex; gap: 10px; margin-top: 16px">
+<a href="#m-visit" style="flex: 1 1 0; text-align: center; background: #8A4016; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 0; border-radius: 999px">Visit us</a>
+<a href="#m-footer" style="flex: 1 1 0; text-align: center; background: #FFFFFF; color: #24160F; text-decoration: none; font-weight: 600; padding: 13px 0; border-radius: 999px; border: 1px solid #24160F">Account</a>
+</div>
+</nav>
+</sc-if>
+
+<!-- Hero -->
+<section id="m-top" style="padding: 28px 20px 36px; display: flex; flex-direction: column; gap: 18px">
+<div style="padding: 10px 10px 0">
+<div style="height: 280px; border-radius: 175px 175px 22px 22px; overflow: hidden; background: #EADFD2; box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 8px #E9B44C, 0 0 36px 4px rgba(233, 180, 76, 0.45)">
+<img src="../img/counter.jpg" alt="Marble counter under hexagonal lights with arched, backlit shelves" style="width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; display: block">
+</div>
+</div>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4016; margin-top: 10px">Artisan chocolate and coffee</span>
+<h1 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 40px; line-height: 1.04; letter-spacing: -0.02em">Chocolate made slowly. Coffee poured warm.</h1>
+<p style="margin: 0; font-size: 17px; color: #5C4A3E">A bright corner at Flamingo for single-origin chocolate, Ethiopian espresso and an unhurried hour.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+<a href="#m-menu" style="text-align: center; background: #24160F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 0; border-radius: 999px">View menu</a>
+<a href="#m-shop" style="text-align: center; background: #FFFFFF; color: #24160F; text-decoration: none; font-weight: 600; padding: 14px 0; border-radius: 999px; border: 1px solid #24160F">Shop chocolate &amp; coffee</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1px solid #EADFD2; padding: 8px 12px; border-radius: 999px; color: #1F5132; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #2E7D4F"></span>Open now · closes [time]</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; background: #FFFFFF; border: 1px solid #EADFD2; padding: 8px 12px; border-radius: 999px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#E9B44C" stroke="#B9862A" stroke-width="1.500" stroke-linejoin="round"><path d="M12 3l2.700 5.600 6.100.800-4.500 4.300 1.100 6.100L12 16.900 6.600 19.800l1.100-6.100L3.200 9.400l6.100-.800L12 3z"/></svg>4.3 · 12 reviews</span>
+</div>
+</section>
+
+<!-- Featured -->
+<section id="m-menu" style="padding: 36px 0 44px; border-top: 1px solid #EADFD2">
+<div style="padding: 0 20px; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; margin-bottom: 20px">
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">What people come back for</h2>
+<a href="#m-menu" style="font-weight: 600; font-size: 15px; white-space: nowrap; padding: 10px 0">Full menu</a>
+</div>
+<div style="display: flex; gap: 14px; overflow-x: auto; padding: 0 20px 8px">
+
+<article style="flex: 0 0 240px; background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 18px; overflow: hidden">
+<div style="position: relative; height: 170px; overflow: hidden; background: #EADFD2">
+<img src="../img/booth.jpg" alt="Cups and pastries on a café table" style="position: absolute; width: 300%; max-width: none; left: -104.5%; top: -78%">
+<span style="position: absolute; left: 10px; top: 10px; background: #24160F; color: #F3D9A4; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">Signature</span>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 19px">House hot chocolate</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 14px">Melted single-origin dark chocolate and steamed milk.</p>
+<span style="font-weight: 600; margin-top: 4px">ETB [price]</span>
+</div>
+</article>
+
+<article style="flex: 0 0 240px; background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 18px; overflow: hidden">
+<div style="position: relative; height: 170px; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Espresso machine behind the marble counter" style="position: absolute; width: 340%; max-width: none; left: -121.7%; top: -78.1%">
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 19px">Macchiato</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 14px">Ethiopian espresso marked with warm milk foam.</p>
+<span style="font-weight: 600; margin-top: 4px">ETB [price]</span>
+</div>
+</article>
+
+<article style="flex: 0 0 240px; background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 18px; overflow: hidden">
+<div style="position: relative; height: 170px; overflow: hidden; background: #EADFD2">
+<img src="../img/pastries.jpg" alt="Artisan chocolate bar on a marble counter" style="position: absolute; width: 220%; max-width: none; left: -40.2%; top: -30.6%">
+<span style="position: absolute; left: 10px; top: 10px; background: #E9B44C; color: #24160F; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px">New</span>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 19px">Artisan chocolate bar</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 14px">Single origin. Eat in or take it wrapped.</p>
+<span style="font-weight: 600; margin-top: 4px">ETB [price]</span>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- Story -->
+<section id="m-story" style="background: #FFFFFF; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2; padding: 40px 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="height: 210px; border-radius: 20px; overflow: hidden; background: #EADFD2">
+<img src="../img/pastries.jpg" alt="Artisan chocolate bar, broken pieces and coffee beans on marble" style="width: 100%; height: 100%; object-fit: cover; object-position: 48% 50%; display: block">
+</div>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #8A4016; margin-top: 6px">Our story</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">Two seeds, one counter</h2>
+<p style="margin: 0; color: #5C4A3E">A cacao nib and a coffee bean start the same way: a fruit, a seed, a slow roast. We give both the same attention.</p>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px">[Founding story: who, when, why.]</p>
+<a href="#m-story" style="font-weight: 600; padding: 10px 0; align-self: flex-start">Read the full story</a>
+</section>
+
+<!-- Experience strip -->
+<section style="padding: 40px 20px 8px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">Inside the café</h2>
+<div style="height: 200px; border-radius: 20px; overflow: hidden; background: #EADFD2">
+<img src="../img/booth.jpg" alt="Tan leather booth seating with plants" style="width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; display: block">
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="height: 150px; border-radius: 75px 75px 16px 16px; overflow: hidden; background: #EADFD2; box-shadow: 0 0 0 2px #E9B44C">
+<img src="../img/shelves.jpg" alt="Backlit shelves stocked with chocolate" style="width: 100%; height: 100%; object-fit: cover; object-position: 78% 50%; display: block">
+</div>
+<div style="height: 150px; border-radius: 16px; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Hexagonal ceiling lights" style="width: 100%; height: 100%; object-fit: cover; object-position: 35% 15%; display: block">
+</div>
+</div>
+</section>
+
+<!-- Location -->
+<section id="m-visit" style="padding: 40px 20px 44px; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">Find us</h2>
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 22px; overflow: hidden">
+<div style="height: 170px; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Flamingo branch storefront at dusk" style="width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; display: block">
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 23px">Flamingo</h3>
+<div style="color: #5C4A3E; font-size: 15px; display: flex; flex-direction: column; gap: 6px">
+<span>[Street address], Flamingo, Addis Ababa</span>
+<span>Mon to Fri [open] – [close]</span>
+<span>Sat and Sun [open] – [close]</span>
+</div>
+<div style="display: flex; gap: 10px; margin-top: 6px">
+<a href="https://www.google.com/maps?q=9.0091962,38.7639797" style="flex: 1 1 0; text-align: center; background: #24160F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 0; border-radius: 999px">Directions</a>
+<a href="#m-footer" style="flex: 1 1 0; text-align: center; background: #FFFFFF; color: #24160F; text-decoration: none; font-weight: 600; padding: 13px 0; border-radius: 999px; border: 1px solid #24160F">Call</a>
+</div>
+</div>
+</article>
+</section>
+
+<!-- Shop teaser -->
+<section id="m-shop" style="background: #F3EDE4; padding: 40px 20px 44px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">Take the shelves home</h2>
+<a href="#m-shop" style="font-weight: 600; font-size: 15px; white-space: nowrap; padding: 10px 0">Shop all</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+
+<article style="background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; height: 120px; overflow: hidden; background: #EADFD2"><img src="../img/pastries.jpg" alt="Artisan chocolate bar" style="position: absolute; width: 220%; max-width: none; left: -40.2%; top: -31.3%"></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 16px; flex-grow: 1">Artisan Dark Bar</h3>
+<span style="font-size: 14px; font-weight: 600">ETB [price]</span>
+<button style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #24160F; background: #FFFFFF; color: #24160F; font-size: 14px; font-weight: 600">Add to cart</button>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; height: 120px; overflow: hidden; background: #EADFD2"><img src="../img/pastries.jpg" alt="Roasted coffee beans" style="position: absolute; width: 280%; max-width: none; left: -146%; top: -67.1%"></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 16px; flex-grow: 1">House Espresso Beans</h3>
+<span style="font-size: 14px; font-weight: 600">ETB [price]</span>
+<button style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #24160F; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 600">Added · 2</button>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; height: 120px; overflow: hidden; background: #EADFD2"><img src="../img/shelves.jpg" alt="Chocolate spread jars" style="position: absolute; width: 420%; max-width: none; left: -212.5%; top: -94%"></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 16px; flex-grow: 1">Chocolate Spread Jar</h3>
+<span style="font-size: 14px; font-weight: 600">ETB [price]</span>
+<button style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #24160F; background: #FFFFFF; color: #24160F; font-size: 14px; font-weight: 600">Add to cart</button>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; height: 120px; overflow: hidden; background: #EADFD2"><img src="../img/shelves.jpg" alt="Gift boxes of chocolate" style="position: absolute; width: 420%; max-width: none; left: -298.6%; top: -180.7%"></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 16px; flex-grow: 1">Gift Assortment</h3>
+<span style="font-size: 14px; font-weight: 600">ETB [price]</span>
+<button style="margin-top: 6px; min-height: 44px; border-radius: 999px; border: 1px solid #24160F; background: #FFFFFF; color: #24160F; font-size: 14px; font-weight: 600">Add to cart</button>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- Subscription teaser -->
+<section id="m-subs" style="background: #24160F; color: #FFFFFF; padding: 40px 20px 44px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #F0C36A">Subscriptions</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em">Never run out of the good stuff</h2>
+<p style="margin: 0; color: #E4D6C7">Coffee, chocolate or both, on your schedule. Skip, pause or cancel any time.</p>
+<a href="#m-subs" style="text-align: center; background: #F0C36A; color: #24160F; text-decoration: none; font-weight: 600; padding: 15px 0; border-radius: 999px; margin-top: 6px">Build my plan</a>
+</section>
+
+<!-- Newsletter -->
+<section style="padding: 44px 20px">
+<div style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 170px 170px 24px 24px; box-shadow: 0 0 0 2px #E9B44C, 0 0 32px 2px rgba(233, 180, 76, 0.32); padding: 64px 22px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: 26px; line-height: 1.1; letter-spacing: -0.01em">First to know, first to taste</h2>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px">New bars, seasonal drinks, tasting evenings. [First-order offer] when you join.</p>
+<sc-if value="{{notSubscribed}}" hint-placeholder-val="{{true}}">
+<form onSubmit="{{subscribe}}" style="display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 6px">
+<label style="display: flex; flex-direction: column; gap: 6px; text-align: left; font-size: 14px; font-weight: 500">Email address
+<input type="email" required placeholder="you@example.com" style="height: 50px; border-radius: 999px; border: 1px solid #B9A791; padding: 0 18px; font-size: 16px; background: #FFFFFF; color: #24160F; box-sizing: border-box; width: 100%">
+</label>
+<button type="submit" style="height: 50px; border-radius: 999px; border: 0; background: #24160F; color: #FFFFFF; font-size: 16px; font-weight: 600">Subscribe</button>
+</form>
+</sc-if>
+<sc-if value="{{subscribed}}" hint-placeholder-val="{{false}}">
+<p role="status" style="margin: 6px 0 0; background: #EEF6F0; color: #1F5132; font-weight: 600; padding: 12px 18px; border-radius: 999px">You are on the list.</p>
+</sc-if>
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="m-footer" style="background: #24160F; color: #E4D6C7; padding: 40px 20px 28px; display: flex; flex-direction: column; gap: 22px; font-size: 15px">
+<span style="font-family: Outfit, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.02em; color: #FFFFFF; line-height: 1">SWEET <span style="font-weight: 500; font-size: 13px; letter-spacing: 0.14em">WORLD</span></span>
+<p style="margin: 0">[Street address], Flamingo, Addis Ababa<br>[Phone number] · [Email address]</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px">
+<a href="#m-shop" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Shop</a>
+<a href="#m-footer" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Delivery and shipping</a>
+<a href="#m-subs" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Subscriptions</a>
+<a href="#m-footer" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Returns</a>
+<a href="#m-menu" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Menu</a>
+<a href="#m-footer" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Track an order</a>
+<a href="#m-story" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Our story</a>
+<a href="#m-footer" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Manage subscription</a>
+<a href="#m-visit" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">Locations</a>
+<a href="#m-footer" style="color: #E4D6C7; text-decoration: none; padding: 11px 0">FAQ</a>
+</div>
+<div style="border-top: 1px solid #4A372C; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #CDBBA9">
+<span>© 2026 Sweet World</span>
+<a href="#m-footer" style="color: #CDBBA9">Privacy</a>
+<a href="#m-footer" style="color: #CDBBA9">Terms</a>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"menuOpen":{"editor":"boolean","default":false},"$preview":{"width":390,"height":4950}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { menu: null, subscribed: false };
+}
+renderVals() {
+var self = this;
+var s = this.state;
+var open = s.menu === null ? !!this.props.menuOpen : s.menu;
+return {
+menuOpen: open,
+menuClosed: !open,
+menuLabel: open ? 'Close menu' : 'Open menu',
+toggleMenu: function () { self.setState({ menu: !open }); },
+subscribed: s.subscribed,
+notSubscribed: !s.subscribed,
+subscribe: function (e) { if (e && e.preventDefault) { e.preventDefault(); } self.setState({ subscribed: true }); }
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sweet World Menu — Flamingo, Addis Ababa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FFF8EE',
+            sand: '#F2E8DA',
+            espresso: '#30231D',
+            caramel: '#A76035',
+            gold: '#C9A66B',
+            'border-subtle': '#E6D8C5',
+            'espresso-soft': '#4A3B33',
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'serif'],
+            sans: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFF8EE;
+      color: #30231D;
+      font-family: 'Manrope', sans-serif;
+    }
+    .font-serif {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+    .transition-all-custom {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+<body class="min-w-[1280px] bg-ivory text-espresso antialiased selection:bg-gold/30 selection:text-espresso">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-40 h-20 bg-ivory/95 backdrop-blur-md border-b border-border-subtle flex items-center justify-between px-10 transition-all-custom">
+    <a href="#" class="flex flex-col group">
+      <span class="font-serif text-2xl tracking-wide text-espresso group-hover:text-caramel transition-colors">Sweet World</span>
+      <span class="text-[11px] uppercase tracking-widest text-caramel font-semibold -mt-1">Flamingo · Addis Ababa</span>
+    </a>
+
+    <nav class="flex items-center space-x-9 text-[15px] font-medium text-espresso" aria-label="Main Navigation">
+      <a href="#" class="hover:text-caramel focus:text-caramel transition-colors">Home</a>
+      <a href="#menu-catalog" class="text-caramel font-semibold border-b-2 border-caramel pb-0.5">Menu</a>
+      <a href="#" class="hover:text-caramel focus:text-caramel transition-colors">Our Story</a>
+      <a href="#" class="hover:text-caramel focus:text-caramel transition-colors">Gallery</a>
+      <a href="#visit-note" class="hover:text-caramel focus:text-caramel transition-colors">Visit Us</a>
+      <a href="#" class="hover:text-caramel focus:text-caramel transition-colors">Contact</a>
+    </nav>
+
+    <div class="flex items-center space-x-4">
+      <a href="https://www.google.com/maps/search/?api=1&query=9.0091962,38.7639797" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-espresso text-ivory hover:bg-caramel text-sm font-semibold transition-all-custom shadow-sm">
+        Get Directions
+      </a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO / CAKE DISPLAY VISUAL (Page-level visual rather than per item) -->
+  <section class="max-w-[1200px] mx-auto px-6 pt-16 pb-12">
+    <div class="flex flex-col items-center text-center max-w-2xl mx-auto space-y-4 mb-12">
+      <div class="inline-flex items-center space-x-2">
+        <span class="h-px w-8 bg-gold"></span>
+        <span class="text-xs uppercase tracking-widest text-caramel font-bold">ARTISANAL SELECTION</span>
+        <span class="h-px w-8 bg-gold"></span>
+      </div>
+      <h1 class="font-serif text-[56px] text-espresso leading-[1.1] tracking-tight">The Sweet World Menu</h1>
+      <p class="text-base text-caramel font-semibold">Flamingo branch · Addis Ababa</p>
+      <p class="text-sm text-espresso-soft max-w-lg leading-relaxed">
+        From traditional Ethiopian Jebena roast coffees to fresh European-style multi-layered gateaux and confections, prepared fresh each day.
+      </p>
+    </div>
+
+    <!-- Page-Level Showcase Banner -->
+    <div class="relative w-full rounded-2xl overflow-hidden shadow-md border border-border-subtle aspect-[21/8]">
+      <img src="../img/5329eea81cad.jpg" alt="Sweet World freshly baked cakes and pastries counter" class="w-full h-full object-cover object-center"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent flex items-end p-8">
+        <p class="text-ivory font-serif text-2xl drop-shadow">Freshly baked morning tortes, tarts & single-origin coffee</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU CATALOG -->
+  <section id="menu-catalog" class="max-w-[1200px] mx-auto px-6 py-12">
+    <!-- Category Tabs -->
+    <div class="flex justify-center mb-16">
+      <div class="inline-flex p-1.5 bg-sand rounded-xl border border-border-subtle space-x-3">
+        <button id="desk-cat-coffee" onclick="switchDeskMenu('coffee')" class="px-8 py-3 rounded-lg text-sm font-semibold bg-espresso text-ivory shadow-sm transition-all">
+          Artisanal Coffee
+        </button>
+        <button id="desk-cat-desserts" onclick="switchDeskMenu('desserts')" class="px-8 py-3 rounded-lg text-sm font-semibold text-espresso hover:text-caramel transition-all">
+          Cakes & Desserts
+        </button>
+      </div>
+    </div>
+
+    <!-- COFFEE LIST (Readable 2-Column Menu Layout) -->
+    <div id="catalog-coffee" class="grid grid-cols-2 gap-x-16 gap-y-10">
+      
+      <!-- Section A: Ethiopian Heritage & Signature -->
+      <div class="space-y-8">
+        <h3 class="font-serif text-2xl text-espresso pb-2 border-b border-gold/40 flex items-center justify-between">
+          <span>Heritage Roasts</span>
+          <span class="text-xs uppercase font-sans tracking-widest text-caramel">Traditional</span>
+        </h3>
+        
+        <div class="space-y-6">
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Traditional Ethiopian Jebena Brew]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Slow-roasted ceremonial clay pot coffee served with aromatic frankincense & fresh rue]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Single Origin Yirgacheffe Filter]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Light roast pourover with jasmine blossom, citrus zest, and clean bergamot sweetness]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Sidama Reserve Pour-Over]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Washed bean profile presenting stone fruit, balanced acidity, and cane sugar sweetness]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section B: Espresso & Contemporary Crafts -->
+      <div class="space-y-8">
+        <h3 class="font-serif text-2xl text-espresso pb-2 border-b border-gold/40 flex items-center justify-between">
+          <span>Espresso & Velvet Crafts</span>
+          <span class="text-xs uppercase font-sans tracking-widest text-caramel">Barista Bar</span>
+        </h3>
+
+        <div class="space-y-6">
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Flamingo Caramel Macchiato]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Steamed whole milk stained with rich double espresso, finished with house burnt caramel]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Velvet Flat White & Café Latte]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Double shot ristretto with silky microfoam poured with fine latte art]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Iced Vanilla Bean Americano]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Chilled double espresso over crystal ice with infused natural vanilla syrup]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DESSERTS LIST (Hidden by default) -->
+    <div id="catalog-desserts" class="hidden grid grid-cols-2 gap-x-16 gap-y-10">
+      
+      <!-- Section A: Layered Tortes & Slices -->
+      <div class="space-y-8">
+        <h3 class="font-serif text-2xl text-espresso pb-2 border-b border-gold/40 flex items-center justify-between">
+          <span>Cakes & Slices</span>
+          <span class="text-xs uppercase font-sans tracking-widest text-caramel">Bakery</span>
+        </h3>
+        
+        <div class="space-y-6">
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Black Forest Layer Cake]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Dark cocoa genoise, fresh kirsch-infused cherries, chantilly cream, and Belgian dark chocolate curls]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Ethiopian Honey & Cardamom Torte]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Moist multi-layered spiced honey sponge frosted with sweet buttercream and toasted almonds]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Italian Espresso Tiramisu]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Layers of house espresso-steeped savoiardi and whipped mascarpone dusted with cocoa]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section B: Tarts & Specialty Patisserie -->
+      <div class="space-y-8">
+        <h3 class="font-serif text-2xl text-espresso pb-2 border-b border-gold/40 flex items-center justify-between">
+          <span>Tarts & Pastries</span>
+          <span class="text-xs uppercase font-sans tracking-widest text-caramel">Confections</span>
+        </h3>
+
+        <div class="space-y-6">
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Dark Chocolate Ganache Tart]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Crisp sweet pastry crust filled with silken 70% dark chocolate and finished with edible gold leaf]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Fresh Mixed Berry Tartlet]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Buttery sable tart shell, vanilla bean crème pâtissière, and seasonal berries]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+
+          <div class="flex justify-between items-start pb-5 border-b border-border-subtle">
+            <div class="space-y-1 pr-6">
+              <h4 class="font-serif text-xl text-espresso">[Mango & Passionfruit Mousse]</h4>
+              <p class="text-xs text-espresso-soft leading-relaxed">[Velvety tropical fruit mousse with a mirror glaze on a tender almond biscuit]</p>
+            </div>
+            <span class="font-serif text-lg font-bold text-caramel whitespace-nowrap">[ETB ---]</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Note & End Action (Directions Link) -->
+    <div id="visit-note" class="mt-20 p-8 rounded-2xl bg-sand/60 border border-border-subtle flex items-center justify-between">
+      <div class="space-y-1">
+        <h4 class="font-serif text-2xl text-espresso">Join us at the counter in Flamingo</h4>
+        <p class="text-sm text-espresso-soft">Prices and daily seasonal specialties are served fresh at our Addis Ababa café.</p>
+      </div>
+      <a 
+        href="https://www.google.com/maps/search/?api=1&query=9.0091962,38.7639797" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-8 py-3.5 h-12 rounded-lg bg-espresso text-ivory text-base font-semibold hover:bg-caramel transition-all-custom shadow-sm whitespace-nowrap"
+      >
+        <svg class="w-5 h-5 mr-2 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+        <span>Get Directions</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-espresso text-ivory pt-16 pb-12 border-t border-espresso-soft mt-16">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="grid grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div class="col-span-5 space-y-4">
+          <span class="font-serif text-3xl text-ivory">Sweet World</span>
+          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Flamingo · Addis Ababa</p>
+          <p class="text-sm text-ivory/70 max-w-sm">Coffee, cakes, and café moments. A welcoming pause in Addis Ababa.</p>
+        </div>
+        <div class="col-span-3 space-y-3">
+          <h4 class="text-xs uppercase tracking-widest text-gold font-bold">Explore</h4>
+          <ul class="space-y-2 text-sm text-ivory/80">
+            <li><a href="#" class="hover:text-gold">Home</a></li>
+            <li><a href="#menu-catalog" class="hover:text-gold">Menu</a></li>
+            <li><a href="#" class="hover:text-gold">Our Story</a></li>
+            <li><a href="#" class="hover:text-gold">Gallery</a></li>
+            <li><a href="#visit-note" class="hover:text-gold">Visit Us</a></li>
+          </ul>
+        </div>
+        <div class="col-span-4 space-y-3 text-sm text-ivory/80">
+          <h4 class="text-xs uppercase tracking-widest text-gold font-bold">Flamingo Branch</h4>
+          <p>Addis Ababa, Ethiopia</p>
+          <p class="text-xs text-ivory/60">Opening hours: [Opening hours]</p>
+          <p class="text-xs text-ivory/60">Phone: [Phone number]</p>
+        </div>
+      </div>
+      <div class="pt-8 flex justify-between items-center text-xs text-ivory/50">
+        <p>© 2025 Sweet World Café. All rights reserved.</p>
+        <p>Flamingo Branch · Addis Ababa, Ethiopia</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchDeskMenu(cat) {
+      const cList = document.getElementById('catalog-coffee');
+      const dList = document.getElementById('catalog-desserts');
+      const cBtn = document.getElementById('desk-cat-coffee');
+      const dBtn = document.getElementById('desk-cat-desserts');
+
+      if (cat === 'coffee') {
+        cList.classList.remove('hidden');
+        dList.classList.add('hidden');
+        cBtn.className = 'px-8 py-3 rounded-lg text-sm font-semibold bg-espresso text-ivory shadow-sm transition-all';
+        dBtn.className = 'px-8 py-3 rounded-lg text-sm font-semibold text-espresso hover:text-caramel transition-all';
+      } else {
+        cList.classList.add('hidden');
+        dList.classList.remove('hidden');
+        dBtn.className = 'px-8 py-3 rounded-lg text-sm font-semibold bg-espresso text-ivory shadow-sm transition-all';
+        cBtn.className = 'px-8 py-3 rounded-lg text-sm font-semibold text-espresso hover:text-caramel transition-all';
+      }
+    }
+  </script>
+
+</body>
+</html>

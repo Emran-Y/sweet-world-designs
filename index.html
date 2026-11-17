@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8">
+<title>Sweet World Design Options</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a quiet espresso-toned shell; the four homepage screenshots carry the colour. Grid of options → full-height viewer. */
+:root{
+  --bg:#F6F2EE; --surface:#FFFFFF; --fg:#22170F; --muted:#6E5F55; --line:#E3D9D0;
+  --accent:#7A3E1D; --accent-fg:#FFFFFF; --chip:#EFE7E0; --stage:#E9E2DB;
+  --display:"Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17110D; --surface:#211913; --fg:#F3EAE2; --muted:#B4A497; --line:#3A2E25;
+  --accent:#E3A36E; --accent-fg:#1A110B; --chip:#2C221B; --stage:#0F0B08; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17110D; --surface:#211913; --fg:#F3EAE2; --muted:#B4A497; --line:#3A2E25;
+  --accent:#E3A36E; --accent-fg:#1A110B; --chip:#2C221B; --stage:#0F0B08; color-scheme:dark}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- catalog ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding-block:clamp(28px,6vw,64px) 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,60px);line-height:1.02;letter-spacing:-.02em;margin:10px 0 14px;text-wrap:balance}
+.lede{max-width:60ch;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,500px),1fr));gap:clamp(20px,3vw,32px);margin-top:clamp(28px,5vw,48px)}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-align:left;padding:0;transition:transform .2s ease, box-shadow .2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px -18px rgba(34,23,15,.45)}
+.shot{aspect-ratio:16/10;max-width:100%;overflow:hidden;border-bottom:1px solid var(--line);background:var(--stage)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.meta{display:flex;flex-direction:column;gap:8px;padding:18px 20px 20px}
+.meta-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.letter{font-family:var(--display);font-weight:700;font-size:14px;color:var(--accent-fg);background:var(--accent);border-radius:6px;padding:1px 8px}
+.name{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.01em}
+.desc{color:var(--muted);margin:0;font-size:15px}
+.swatches{display:flex;gap:6px;align-items:center}
+.swatches span{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.pages{font-size:13px;color:var(--muted)}
+.foot{margin-top:40px;font-size:13px;color:var(--muted);max-width:70ch}
+
+/* ---------- viewer ---------- */
+.viewer{position:fixed;inset:0;display:flex;flex-direction:column;background:var(--bg);z-index:5}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;border-bottom:1px solid var(--line);background:var(--surface);
+  padding-block:calc(10px + env(safe-area-inset-top,0px)) 10px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.back{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:transparent;border-radius:999px;padding:7px 14px 7px 10px;font-weight:500;font-size:14px}
+.vtitle{font-family:var(--display);font-weight:700;font-size:20px;flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg{display:flex;background:var(--chip);border-radius:999px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:500;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.seg button:disabled{opacity:.35;cursor:not-allowed}
+.row2{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;width:100%}
+.tabs{display:flex;gap:6px;overflow-x:auto;flex:1 1 auto;min-width:0;scrollbar-width:none}
+.tabs button{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:6px 14px;font-size:14px;color:var(--muted)}
+.tabs button[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.others{display:flex;gap:6px}
+.others button{border:1px solid var(--line);background:transparent;border-radius:8px;width:34px;height:34px;font-family:var(--display);font-weight:700;font-size:14px}
+.others button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.stage{flex:1;min-height:0;position:relative;background:var(--stage);overflow:hidden}
+.frame{position:absolute;top:0;left:50%;transform-origin:top left;border:0;background:#fff}
+.frame.phone{border-radius:28px;box-shadow:0 0 0 8px #1b1410, 0 24px 50px -20px rgba(0,0,0,.6)}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:14px;pointer-events:none}
+@media (max-width:600px){.vtitle{font-size:17px}.seg button{padding:6px 11px}}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<main id="catalog" class="wrap">
+  <div class="eyebrow">Sweet World · Flamingo, Addis Ababa</div>
+  <h1>Four directions for the new website</h1>
+  <p class="lede">Open an option to browse its pages. Use the Desktop and Mobile switch to see each page on a laptop and on a phone. Then tell us the one you like most.</p>
+  <div class="grid" id="grid"></div>
+  <p class="foot">These are design mockups, not the live site. Anything in [brackets] is a placeholder, such as prices, opening hours and the street address. Some photos are stand-ins and will be replaced with real Sweet World photos.</p>
+</main>
+
+<section id="viewer" class="viewer" hidden aria-label="Design viewer">
+  <div class="bar">
+    <button class="back" id="back" type="button"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>All options</button>
+    <div class="vtitle" id="vtitle"></div>
+    <div class="seg" role="group" aria-label="Device">
+      <button type="button" id="dev-desktop" aria-pressed="true">Desktop</button>
+      <button type="button" id="dev-mobile" aria-pressed="false">Mobile</button>
+    </div>
+    <div class="row2">
+      <div class="tabs" id="tabs" role="group" aria-label="Page"></div>
+      <div class="others" id="others" role="group" aria-label="Switch option"></div>
+    </div>
+  </div>
+  <div class="stage" id="stage">
+    <div class="loading" id="loading">Loading design…</div>
+    <iframe class="frame" id="frame" title="Design preview"></iframe>
+  </div>
+</section>
+
+<script>
+const DESIGNS = [
+  { id:"daylight", letter:"A", name:"Daylight",
+    desc:"Bright and clean with bold rounded type. Built around a shop, coffee and chocolate subscriptions, and branch finder.",
+    colors:["#FBF8F3","#24160F","#8A4016","#E9B44C"],
+    pages:[{label:"Homepage", desktop:"designs/daylight/desktop.html", mobile:"designs/daylight/mobile.html"}] },
+  { id:"colour-pop", letter:"B", name:"Colour Pop",
+    desc:"Loud orange, chunky script headlines and a scrolling ticker. Playful and impossible to miss.",
+    colors:["#E8611A","#24160F","#FFF4E2","#F6C343"],
+    pages:[{label:"Homepage", desktop:"designs/colour-pop/desktop.html", mobile:"designs/colour-pop/mobile.html"}] },
+  { id:"cafe-classic", letter:"C", name:"Café Classic",
+    desc:"Warm caramel and cream with an elegant serif. Calm and cosy, like a sit-down café.",
+    colors:["#FFF8F0","#30231D","#8F4D24","#FDA776"],
+    pages:[
+      {label:"Homepage", desktop:"designs/editorial/home-desktop.html", mobile:"designs/editorial/home-mobile.html"},
+      {label:"Menu", desktop:"designs/editorial/menu-desktop.html", mobile:"designs/editorial/menu-mobile.html"} ] },
+  { id:"burgundy", letter:"D", name:"Burgundy Editorial",
+    desc:"Deep burgundy and ivory with magazine-style typography. Refined and premium.",
+    colors:["#FCF6EB","#6A2535","#BD8658","#2E2421"],
+    pages:[
+      {label:"Homepage", desktop:"designs/flamingo/home-desktop.html", mobile:"designs/flamingo/home-mobile.html"},
+      {label:"Menu", desktop:"designs/flamingo/menu-desktop.html", mobile:"designs/flamingo/menu-mobile.html"},
+      {label:"Menu (alternative)", mobile:"designs/flamingo/menu-mobile-alt.html"},
+      {label:"Item details", desktop:"designs/flamingo/item-detail-desktop.html"} ] }
+];
+const THUMB = { "daylight":"thumbs/daylight.jpg", "colour-pop":"thumbs/colour-pop.jpg", "cafe-classic":"thumbs/editorial.jpg", "burgundy":"thumbs/flamingo.jpg" };
+
+const $ = id => document.getElementById(id);
+const grid=$("grid"), catalog=$("catalog"), viewer=$("viewer"), frame=$("frame"), stage=$("stage");
+let cur=null, pageIdx=0, device = matchMedia("(max-width: 700px)").matches ? "mobile" : "desktop";
+
+DESIGNS.forEach(d=>{
+  const b=document.createElement("button"); b.type="button"; b.className="card";
+  b.innerHTML=`<div class="shot"><img src="${THUMB[d.id]}" alt="${d.name} homepage on desktop" loading="lazy"></div>
+  <div class="meta"><div class="meta-top"><span class="letter">${d.letter}</span><span class="name">${d.name}</span></div>
+  <p class="desc">${d.desc}</p>
+  <div class="meta-top"><div class="swatches">${d.colors.map(c=>`<span style="background:${c}"></span>`).join("")}</div>
+  <span class="pages">${d.pages.map(p=>p.label).join(" · ")}</span></div></div>`;
+  b.onclick=()=>{ location.hash=d.id; };
+  grid.appendChild(b);
+});
+
+function others(){
+  $("others").innerHTML="";
+  DESIGNS.forEach(d=>{const b=document.createElement("button");b.type="button";b.textContent=d.letter;b.title=d.name;
+    b.setAttribute("aria-pressed",d===cur);b.onclick=()=>{location.hash=d.id};$("others").appendChild(b);});
+}
+function tabs(){
+  $("tabs").innerHTML="";
+  cur.pages.forEach((p,i)=>{const b=document.createElement("button");b.type="button";b.textContent=p.label;
+    b.setAttribute("aria-pressed",i===pageIdx);b.onclick=()=>{pageIdx=i;render();};$("tabs").appendChild(b);});
+}
+function render(){
+  const p=cur.pages[pageIdx];
+  let dev=device; if(!p[dev]) dev = dev==="desktop"?"mobile":"desktop";
+  $("dev-desktop").disabled=!p.desktop; $("dev-mobile").disabled=!p.mobile;
+  $("dev-desktop").setAttribute("aria-pressed",dev==="desktop"); $("dev-mobile").setAttribute("aria-pressed",dev==="mobile");
+  $("vtitle").textContent=`${cur.letter} · ${cur.name}`;
+  tabs(); others();
+  const src=p[dev];
+  frame.dataset.dev=dev;
+  if(frame.getAttribute("src")!==src){ $("loading").hidden=false; frame.setAttribute("src",src); }
+  layout();
+}
+function layout(){
+  if(!cur) return;
+  const W=stage.clientWidth, H=stage.clientHeight, dev=frame.dataset.dev;
+  frame.classList.toggle("phone", dev==="mobile" && W>520);
+  let fw, fh, s, top=0;
+  if(dev==="desktop"){ fw=1440; s=Math.min(1,W/fw); fh=H/s; }
+  else if(W<=520){ fw=390; s=W/fw; fh=H/s; }               /* real phone: fill the screen */
+  else { fw=390; const pad=28; fh=Math.min(844,(H-pad*2)); s=Math.min(1,(H-pad*2)/fh); top=pad; }
+  frame.style.width=fw+"px"; frame.style.height=fh+"px";
+  frame.style.transform=`translate(-50%,${top}px) scale(${s})`;
+  frame.style.transformOrigin="top center";
+}
+frame.addEventListener("load",()=>{$("loading").hidden=true});
+$("dev-desktop").onclick=()=>{device="desktop";render();};
+$("dev-mobile").onclick=()=>{device="mobile";render();};
+$("back").onclick=()=>{location.hash="";};
+addEventListener("resize",layout);
+
+function route(){
+  const d=DESIGNS.find(x=>x.id===location.hash.slice(1));
+  if(d){ if(d!==cur){cur=d;pageIdx=0;} catalog.hidden=true; viewer.hidden=false; render(); }
+  else { cur=null; viewer.hidden=true; catalog.hidden=false; frame.removeAttribute("src"); }
+}
+addEventListener("hashchange",route); route();
+</script>
+</body>
+</html>

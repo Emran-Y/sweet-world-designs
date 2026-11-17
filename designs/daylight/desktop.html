@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweet World homepage</title>
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+a{color:#8A4016}a:hover{color:#5E2A0C}
+button{font-family:inherit;cursor:pointer}
+input,select{font-family:inherit}
+</style>
+</helmet>
+<div style="background: #FBF8F3; color: #24160F; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55">
+
+<!-- 1. Announcement + header -->
+<div style="background: #24160F; color: #F3D9A4; font-size: 14px; padding: 10px 20px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; align-items: center">
+<span>Open today · [opening hours]</span>
+<span aria-hidden="true" style="width: 4px; height: 4px; border-radius: 50%; background: #E9B44C"></span>
+<span>New: single-origin artisan chocolate bars</span>
+<a href="#shop" style="color: #FFFFFF; font-weight: 600">Shop now</a>
+</div>
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #EADFD2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 16px clamp(20px, 5vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+<a href="#top" aria-label="Sweet World home" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #24160F">
+<svg aria-hidden="true" width="34" height="38" viewBox="0 0 34 38" fill="none"><path d="M17 2l14 8.2v17.6L17 36 3 27.8V10.2L17 2z" stroke="#E9B44C" stroke-width="2.5"/><circle cx="17" cy="19" r="5" fill="#24160F"/></svg>
+<span style="font-family: Outfit, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.02em; line-height: 1">SWEET <span style="font-weight: 500; font-size: 16px; letter-spacing: 0.14em">WORLD</span></span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px; flex-grow: 1; font-weight: 500; font-size: 15px">
+<a href="#menu" style="color: #24160F; text-decoration: none; padding: 12px 0">Menu</a>
+<a href="#shop" style="color: #24160F; text-decoration: none; padding: 12px 0">Shop</a>
+<a href="#subscriptions" style="color: #24160F; text-decoration: none; padding: 12px 0">Subscriptions</a>
+<a href="#story" style="color: #24160F; text-decoration: none; padding: 12px 0">Our story</a>
+<a href="#locations" style="color: #24160F; text-decoration: none; padding: 12px 0">Locations</a>
+<a href="#contact" style="color: #24160F; text-decoration: none; padding: 12px 0">Contact</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 4px">
+<button aria-label="Search" style="width: 44px; height: 44px; border: 0; background: transparent; color: #24160F; border-radius: 50%; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+</button>
+<button aria-label="Account" style="width: 44px; height: 44px; border: 0; background: transparent; color: #24160F; border-radius: 50%; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+</button>
+<a href="#shop" aria-label="Cart" style="position: relative; width: 44px; height: 44px; color: #24160F; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+<span style="position: absolute; top: 2px; right: 0; min-width: 20px; height: 20px; padding: 0 5px; box-sizing: border-box; border-radius: 10px; background: #8A4016; color: #FFFFFF; font-size: 12px; font-weight: 600; line-height: 20px; text-align: center">{{cartCount}}</span>
+</a>
+<a href="#locations" style="margin-left: 12px; background: #8A4016; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 999px">Visit us</a>
+</div>
+</div>
+</header>
+
+<!-- 2. Hero -->
+<section id="top" style="max-width: 1280px; margin: 0 auto; padding: 72px clamp(20px, 5vw, 48px) 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">{{hero.kicker}}</span>
+<h1 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2.6rem, 5vw, 4.5rem); line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance">{{hero.title}}</h1>
+<p style="margin: 0; font-size: 19px; color: #5C4A3E; max-width: 30em">{{hero.body}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+<a href="#menu" style="background: #24160F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 28px; border-radius: 999px">View menu</a>
+<a href="#shop" style="background: #FFFFFF; color: #24160F; text-decoration: none; font-weight: 600; padding: 14px 28px; border-radius: 999px; border: 1px solid #24160F">Shop chocolate &amp; coffee</a>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; margin-top: 20px">
+<button onClick="{{prevSlide}}" aria-label="Previous slide" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; background: #FFFFFF; color: #24160F; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+</button>
+<div style="display: flex; gap: 6px; align-items: center">
+<sc-for list="{{dots}}" as="dot" hint-placeholder-count="3">
+<button onClick="{{dot.go}}" aria-label="{{dot.label}}" style="height: 44px; padding: 0; border: 0; background: transparent; display: flex; align-items: center"><span style="display: block; height: 6px; border-radius: 3px; width: {{dot.w}}; background: {{dot.bg}}"></span></button>
+</sc-for>
+</div>
+<button onClick="{{nextSlide}}" aria-label="Next slide" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; background: #FFFFFF; color: #24160F; display: flex; align-items: center; justify-content: center">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+</button>
+</div>
+</div>
+<div style="padding: 14px">
+<div style="aspect-ratio: 5 / 4; border-radius: 300px 300px 28px 28px; overflow: hidden; background: #EADFD2; box-shadow: 0 0 0 8px #FFFFFF, 0 0 0 11px #E9B44C, 0 0 56px 8px rgba(233, 180, 76, 0.45)">
+<img src="{{hero.img}}" alt="{{hero.alt}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{hero.pos}}; display: block">
+</div>
+</div>
+</section>
+
+<!-- Fact strip -->
+<div style="border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2; background: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 22px clamp(20px, 5vw, 48px); display: flex; flex-wrap: wrap; gap: 16px 56px; justify-content: space-between; font-size: 15px">
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="#E9B44C" stroke="#B9862A" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.3 1.1 6.1L12 16.9 6.6 19.8l1.1-6.1L3.2 9.4l6.1-.8L12 3z"/></svg>
+<span><strong>4.3</strong> from 12 reviews on HotSpot</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>
+<span>Flamingo branch, Addis Ababa</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+<span>Open daily · [opening hours]</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.800"/><circle cx="17" cy="18" r="1.800"/></svg>
+<span>Delivery in Addis Ababa · [delivery terms]</span>
+</div>
+</div>
+</div>
+
+<!-- 3. Featured menu -->
+<section id="menu" style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px)">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: flex-end; margin-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 620px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">From the counter</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">What people come back for</h2>
+</div>
+<a href="#menu" style="font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 12px 0">See the full menu
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px">
+
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #EADFD2">
+<img src="../img/booth.jpg" alt="Cups and pastries on a café table" style="position: absolute; width: 300%; max-width: none; left: -104.5%; top: -69.5%">
+<span style="position: absolute; left: 12px; top: 12px; background: #24160F; color: #F3D9A4; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px">Signature</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 21px">House hot chocolate</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px; flex-grow: 1">Melted single-origin dark chocolate, steamed milk, nothing powdered.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px">
+<span style="font-weight: 600">ETB [price]</span>
+<span style="font-size: 13px; color: #5C4A3E">Rich · Cocoa · Velvet</span>
+</div>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Espresso machine behind the marble counter" style="position: absolute; width: 340%; max-width: none; left: -121.7%; top: -72%">
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 21px">Macchiato</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px; flex-grow: 1">The Addis classic. Ethiopian espresso marked with warm milk foam.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px">
+<span style="font-weight: 600">ETB [price]</span>
+<span style="font-size: 13px; color: #5C4A3E">[Origin] · [notes]</span>
+</div>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #EADFD2">
+<img src="../img/pastries.jpg" alt="Sweet World artisan chocolate bar on a marble counter" style="position: absolute; width: 220%; max-width: none; left: -40.2%; top: -24.3%">
+<span style="position: absolute; left: 12px; top: 12px; background: #E9B44C; color: #24160F; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px">New</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 21px">Artisan chocolate bar</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px; flex-grow: 1">Single-origin bar, broken at the counter or wrapped to take home.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px">
+<span style="font-weight: 600">ETB [price]</span>
+<span style="font-size: 13px; color: #5C4A3E">[Cacao %] · [origin]</span>
+</div>
+</div>
+</article>
+
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #EADFD2">
+<img src="../img/shelves.jpg" alt="Jars of chocolate spread on a lit shelf" style="position: absolute; width: 420%; max-width: none; left: -212.5%; top: -86.3%">
+<span style="position: absolute; left: 12px; top: 12px; background: #FFFFFF; color: #24160F; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px">Seasonal</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 8px; flex-grow: 1">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 21px">Chocolate spread toast</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px; flex-grow: 1">Warm bread, a thick layer of our own spread. [Seasonal topping].</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px">
+<span style="font-weight: 600">ETB [price]</span>
+<span style="font-size: 13px; color: #5C4A3E">Sweet · Warm</span>
+</div>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- 4. Our story -->
+<section id="story" style="background: #FFFFFF; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2">
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="aspect-ratio: 16 / 10; border-radius: 28px; overflow: hidden; background: #EADFD2">
+<img src="../img/pastries.jpg" alt="Artisan chocolate bar, broken pieces and coffee beans on marble" style="width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; display: block">
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div style="aspect-ratio: 4 / 3; border-radius: 20px; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Staff preparing orders behind the counter" style="width: 100%; height: 100%; object-fit: cover; object-position: 78% 50%; display: block">
+</div>
+<div style="aspect-ratio: 4 / 3; border-radius: 20px; background: #F6EFE6; border: 1px dashed #C9B8A6; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; box-sizing: border-box; color: #5C4A3E; font-size: 14px">[Photo: the people behind Sweet World]</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">Our story</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">Two seeds, one counter</h2>
+<p style="margin: 0; font-size: 18px; color: #5C4A3E">A cacao nib and a coffee bean start the same way: a fruit, a seed, a slow roast. We give both the same attention. Chocolate sits behind the glass. Espresso is pulled to order in front of it.</p>
+<p style="margin: 0; color: #5C4A3E">[Founding story: who started Sweet World, when, and why.]</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 0; width: 100%">
+<li style="display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid #EADFD2">
+<span style="font-family: Outfit, sans-serif; font-weight: 700; color: #B9862A; font-size: 15px; min-width: 28px">01</span>
+<div><strong style="font-family: Outfit, sans-serif; font-size: 18px; font-weight: 600">Single-origin cacao</strong><div style="color: #5C4A3E; font-size: 15px">[Where the cacao comes from and who grows it.]</div></div>
+</li>
+<li style="display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid #EADFD2">
+<span style="font-family: Outfit, sans-serif; font-weight: 700; color: #B9862A; font-size: 15px; min-width: 28px">02</span>
+<div><strong style="font-family: Outfit, sans-serif; font-size: 18px; font-weight: 600">Ethiopian coffee</strong><div style="color: #5C4A3E; font-size: 15px">[Region, roaster and how it is brewed here.]</div></div>
+</li>
+<li style="display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2">
+<span style="font-family: Outfit, sans-serif; font-weight: 700; color: #B9862A; font-size: 15px; min-width: 28px">03</span>
+<div><strong style="font-family: Outfit, sans-serif; font-size: 18px; font-weight: 600">Made in small batches</strong><div style="color: #5C4A3E; font-size: 15px">[What is made in-house, and how.]</div></div>
+</li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 4px">
+<a href="#story" style="font-weight: 600; padding: 12px 0">Read the full story</a>
+<a href="#story" style="font-weight: 600; padding: 12px 0">Meet our producers</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5. Café experience -->
+<section id="experience" style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px)">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px; margin-bottom: 40px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">Inside the café</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">Warm light, leather booths, a marble counter</h2>
+<p style="margin: 0; color: #5C4A3E; font-size: 18px">Come for ten minutes or stay the afternoon.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<figure style="margin: 0; position: relative; flex: 2 1 480px; height: 380px; border-radius: 24px; overflow: hidden; background: #EADFD2">
+<img src="../img/booth.jpg" alt="Tan leather booth seating with plants and a marble counter" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px">The booth</figcaption>
+</figure>
+<figure style="margin: 0; position: relative; flex: 1 1 300px; height: 380px; border-radius: 190px 190px 24px 24px; overflow: hidden; background: #EADFD2; box-shadow: 0 0 0 3px #E9B44C">
+<img src="../img/shelves.jpg" alt="Backlit shelves stocked with chocolate products" style="width: 100%; height: 100%; object-fit: cover; object-position: 78% 50%; display: block">
+<figcaption style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 16px; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px; white-space: nowrap">The shelves</figcaption>
+</figure>
+<figure style="margin: 0; position: relative; flex: 1 1 300px; height: 320px; border-radius: 24px; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Hexagonal ceiling lights above the counter" style="width: 100%; height: 100%; object-fit: cover; object-position: 40% 20%; display: block">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px">The counter</figcaption>
+</figure>
+<figure style="margin: 0; position: relative; flex: 1 1 300px; height: 320px; border-radius: 24px; overflow: hidden; background: #EADFD2">
+<img src="../img/pastries.jpg" alt="Chocolate pieces and coffee beans" style="width: 100%; height: 100%; object-fit: cover; object-position: 62% 80%; display: block">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px">Cacao and coffee</figcaption>
+</figure>
+<figure style="margin: 0; position: relative; flex: 1 1 300px; height: 320px; border-radius: 24px; overflow: hidden; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Café storefront lit up in the evening" style="width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; display: block">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; background: #24160F; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 999px">Evenings at Flamingo</figcaption>
+</figure>
+</div>
+<a href="#experience" style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600; margin-top: 28px; padding: 12px 0">Open the gallery
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+</a>
+</section>
+
+<!-- 6. Locations -->
+<section id="locations" style="background: #F3EDE4">
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px)">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: flex-end; margin-bottom: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">Locations and hours</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">Find us in Addis Ababa</h2>
+</div>
+<div role="group" aria-label="Filter branches" style="display: flex; gap: 8px">
+<sc-for list="{{branchFilters}}" as="f" hint-placeholder-count="2">
+<button onClick="{{f.pick}}" aria-pressed="{{f.on}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid {{f.bd}}; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
+
+<article style="background: #FFFFFF; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; grid-column: span 1">
+<div style="position: relative; height: 260px; background: #EADFD2">
+<img src="../img/counter.jpg" alt="Flamingo branch storefront at dusk" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 8px; background: #FFFFFF; color: #1F5132; font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 999px">
+<span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #2E7D4F"></span>Open now · closes [time]</span>
+</div>
+<div style="padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 26px">Flamingo</h3>
+<span style="font-size: 14px; color: #5C4A3E">4.3 rating · 12 reviews</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; color: #5C4A3E; font-size: 15px">
+<div style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg><span>[Street address], Flamingo, Addis Ababa</span></div>
+<div style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span>[Phone number]</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px">
+<a href="https://www.google.com/maps?q=9.0091962,38.7639797" style="background: #24160F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 999px">Get directions</a>
+<a href="#contact" style="background: #FFFFFF; color: #24160F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 999px; border: 1px solid #24160F">Call</a>
+<a href="#menu" style="color: #8A4016; font-weight: 600; font-size: 15px; padding: 13px 10px">Branch menu</a>
+</div>
+</div>
+</article>
+
+<div style="background: #FFFFFF; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 20px">Opening hours</h3>
+<table style="width: 100%; border-collapse: collapse; font-size: 15px">
+<tbody>
+<tr><th scope="row" style="text-align: left; font-weight: 500; padding: 11px 0; border-top: 1px solid #EADFD2">Monday to Friday</th><td style="text-align: right; padding: 11px 0; border-top: 1px solid #EADFD2; color: #5C4A3E">[open] – [close]</td></tr>
+<tr><th scope="row" style="text-align: left; font-weight: 500; padding: 11px 0; border-top: 1px solid #EADFD2">Saturday</th><td style="text-align: right; padding: 11px 0; border-top: 1px solid #EADFD2; color: #5C4A3E">[open] – [close]</td></tr>
+<tr><th scope="row" style="text-align: left; font-weight: 500; padding: 11px 0; border-top: 1px solid #EADFD2">Sunday</th><td style="text-align: right; padding: 11px 0; border-top: 1px solid #EADFD2; color: #5C4A3E">[open] – [close]</td></tr>
+<tr><th scope="row" style="text-align: left; font-weight: 500; padding: 11px 0; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2">Public holidays</th><td style="text-align: right; padding: 11px 0; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2; color: #5C4A3E">[holiday hours]</td></tr>
+</tbody>
+</table>
+<div style="flex-grow: 1; min-height: 180px; border-radius: 16px; background: #F6EFE6; border: 1px dashed #C9B8A6; display: flex; flex-direction: column; gap: 6px; align-items: center; justify-content: center; text-align: center; padding: 16px; color: #5C4A3E; font-size: 14px">
+<svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A4016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></svg>
+<span>[Map embed]</span>
+<span>9.0092° N, 38.7640° E</span>
+</div>
+</div>
+
+<sc-if value="{{showAllBranches}}" hint-placeholder-val="{{true}}">
+<div style="border-radius: 24px; border: 1px dashed #B9A791; padding: 28px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; justify-content: center; min-height: 240px">
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 22px">[Next branch]</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 15px">Each branch gets the same card: photo, address, hours, phone, directions and its own menu.</p>
+<a href="#contact" style="font-weight: 600; padding: 12px 0">Tell us where to open next</a>
+</div>
+</sc-if>
+
+</div>
+</div>
+</section>
+
+<!-- 7. Online shop -->
+<section id="shop" style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px)">
+<div style="display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; align-items: flex-end; margin-bottom: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 620px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #8A4016">Online shop</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">Take the shelves home</h2>
+</div>
+<div aria-live="polite" style="display: flex; align-items: center; gap: 14px; background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 999px; padding: 6px 6px 6px 20px">
+<span style="font-size: 15px"><strong>{{cartCount}}</strong> {{cartLabel}} in cart</span>
+<a href="#shop" style="background: #8A4016; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 11px 20px; border-radius: 999px">Checkout</a>
+</div>
+</div>
+<div role="group" aria-label="Product categories" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px">
+<sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+<button onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}">{{c.label}}</button>
+</sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px">
+<sc-for list="{{products}}" as="p" hint-placeholder-count="8">
+<article style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; overflow: hidden; display: flex; flex-direction: column">
+<div style="position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #F6EFE6; display: flex; align-items: center; justify-content: center; color: #5C4A3E; font-size: 14px">
+<sc-if value="{{p.hasImg}}" hint-placeholder-val="{{true}}">
+<img src="{{p.img}}" alt="{{p.alt}}" style="position: absolute; max-width: none; width: {{p.w}}; left: {{p.x}}; top: {{p.y}}">
+</sc-if>
+<sc-if value="{{p.noImg}}" hint-placeholder-val="{{false}}">
+<span>[Product photo]</span>
+</sc-if>
+<sc-if value="{{p.low}}" hint-placeholder-val="{{false}}">
+<span style="position: absolute; right: 12px; top: 12px; background: #FFFFFF; color: #7A3B10; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px">Low stock</span>
+</sc-if>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6B5648">{{p.catLabel}}</span>
+<h3 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 600; font-size: 20px">{{p.name}}</h3>
+<p style="margin: 0; color: #5C4A3E; font-size: 14px; flex-grow: 1">{{p.meta}}</p>
+<sc-if value="{{p.grind}}" hint-placeholder-val="{{false}}">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #5C4A3E; margin-top: 6px">Grind
+<select style="height: 44px; border-radius: 10px; border: 1px solid #C9B8A6; background: #FFFFFF; padding: 0 10px; font-size: 15px; color: #24160F">
+<option>Whole bean</option>
+<option>Espresso</option>
+<option>Filter</option>
+<option>Jebena (fine)</option>
+</select>
+</label>
+</sc-if>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 10px">
+<span style="font-weight: 600">ETB [price]</span>
+<button onClick="{{p.add}}" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #24160F; background: {{p.btnBg}}; color: {{p.btnFg}}; font-size: 15px; font-weight: 600">{{p.btnLabel}}</button>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- 8. Subscriptions -->
+<section id="subscriptions" style="background: #24160F; color: #FFFFFF">
+<div style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #F0C36A">Subscriptions</span>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.08; letter-spacing: -0.015em">Never run out of the good stuff</h2>
+<p style="margin: 0; font-size: 18px; color: #E4D6C7">Fresh coffee, chocolate, or both, delivered on your schedule in Addis Ababa.</p>
+<ul style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #E4D6C7">
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0C36A" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg><span>Change coffee, quantity or grind before each delivery</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0C36A" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg><span>Skip a delivery or pause while you travel</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0C36A" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg><span>Cancel any time from your account</span></li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F0C36A" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px"><path d="M5 12.500l4.500 4.500L19 7.500"/></svg><span>[Subscriber benefit, e.g. member price or free delivery]</span></li>
+</ul>
+<a href="#contact" style="color: #F0C36A; font-weight: 600; padding: 12px 0; align-self: flex-start">Already subscribed? Manage deliveries</a>
+</div>
+
+<div style="background: #FBF8F3; color: #24160F; border-radius: 28px; padding: clamp(20px, 3vw, 36px); display: flex; flex-direction: column; gap: 26px">
+<div role="group" aria-label="What to send" style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; font-size: 15px">1. What should we send?</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px">
+<sc-for list="{{plans}}" as="o" hint-placeholder-count="3">
+<button onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="text-align: left; padding: 14px 16px; min-height: 76px; border-radius: 16px; border: 2px solid {{o.bd}}; background: {{o.bg}}; color: #24160F; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: Outfit, sans-serif; font-weight: 600; font-size: 17px">{{o.label}}</span>
+<span style="font-size: 13px; color: #5C4A3E">{{o.sub}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px 40px">
+<div role="group" aria-label="Quantity" style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; font-size: 15px">2. How much?</span>
+<div style="display: flex; align-items: center; gap: 6px">
+<button onClick="{{qtyDown}}" aria-label="Fewer" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #C9B8A6; background: #FFFFFF; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+<span aria-live="polite" style="min-width: 96px; text-align: center; font-weight: 600">{{qtyLabel}}</span>
+<button onClick="{{qtyUp}}" aria-label="More" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #C9B8A6; background: #FFFFFF; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+</div>
+</div>
+<div role="group" aria-label="Delivery frequency" style="display: flex; flex-direction: column; gap: 10px; flex-grow: 1">
+<span style="font-weight: 600; font-size: 15px">3. How often?</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{freqs}}" as="o" hint-placeholder-count="3">
+<button onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid {{o.bd}}; background: {{o.bg}}; color: {{o.fg}}">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+<sc-if value="{{showGrind}}" hint-placeholder-val="{{true}}">
+<div role="group" aria-label="Grind" style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; font-size: 15px">4. Which grind?</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{grinds}}" as="o" hint-placeholder-count="4">
+<button onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="min-height: 44px; padding: 0 16px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid {{o.bd}}; background: {{o.bg}}; color: {{o.fg}}">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<div style="border-top: 1px solid #EADFD2; padding-top: 22px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center">
+<div aria-live="polite" style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 13px; color: #5C4A3E">Your plan</span>
+<span style="font-weight: 600">{{planSummary}}</span>
+<span style="font-size: 14px; color: #5C4A3E">ETB [price] per delivery</span>
+</div>
+<a href="#subscriptions" style="background: #8A4016; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 28px; border-radius: 999px">Start subscription</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 9. Newsletter -->
+<section id="newsletter" style="max-width: 1280px; margin: 0 auto; padding: 96px clamp(20px, 5vw, 48px)">
+<div style="background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 240px 240px 32px 32px; box-shadow: 0 0 0 3px #E9B44C, 0 0 48px 4px rgba(233, 180, 76, 0.32); padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 80px) clamp(40px, 5vw, 64px); display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; max-width: 860px; margin: 0 auto">
+<svg aria-hidden="true" width="34" height="38" viewBox="0 0 34 38" fill="none"><path d="M17 2l14 8.2v17.6L17 36 3 27.8V10.2L17 2z" stroke="#E9B44C" stroke-width="2.500"/><circle cx="17" cy="19" r="5" fill="#24160F"/></svg>
+<h2 style="margin: 0; font-family: Outfit, sans-serif; font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.1; letter-spacing: -0.015em; text-wrap: balance">First to know, first to taste</h2>
+<p style="margin: 0; color: #5C4A3E; font-size: 17px; max-width: 34em">New bars, seasonal drinks, tasting evenings. One short email when there is news. [First-order offer] when you join.</p>
+<sc-if value="{{notSubscribed}}" hint-placeholder-val="{{true}}">
+<form onSubmit="{{subscribe}}" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: flex-end; width: 100%; max-width: 520px; margin-top: 8px">
+<label style="display: flex; flex-direction: column; gap: 6px; text-align: left; font-size: 14px; font-weight: 500; flex: 1 1 240px">Email address
+<input type="email" required placeholder="you@example.com" style="height: 52px; border-radius: 999px; border: 1px solid #B9A791; padding: 0 20px; font-size: 16px; background: #FFFFFF; color: #24160F; box-sizing: border-box; width: 100%">
+</label>
+<button type="submit" style="height: 52px; padding: 0 28px; border-radius: 999px; border: 0; background: #24160F; color: #FFFFFF; font-size: 16px; font-weight: 600">Subscribe</button>
+</form>
+</sc-if>
+<sc-if value="{{subscribed}}" hint-placeholder-val="{{false}}">
+<p role="status" style="margin: 8px 0 0; background: #EEF6F0; color: #1F5132; font-weight: 600; padding: 14px 22px; border-radius: 999px">You are on the list. Check your inbox.</p>
+</sc-if>
+<div style="display: flex; gap: 8px; margin-top: 12px">
+<a href="#newsletter" aria-label="Instagram" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4.500"/><circle cx="12" cy="12" r="3.500"/><path d="M16.500 7.500h.01"/></svg></a>
+<a href="#newsletter" aria-label="Facebook" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.500V7a2 2 0 012-2h1.500M14 20v-8m-3 0h6"/></svg></a>
+<a href="#newsletter" aria-label="Telegram" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 5L3.500 11.500l5 2 2 5.500 3-4 4.500 3L20 5z"/></svg></a>
+<a href="#newsletter" aria-label="TikTok" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #D9CCBE; color: #24160F; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4v10.500a3.500 3.500 0 11-3.500-3.500M13 4c.500 2.500 2.500 4.500 5 4.500"/></svg></a>
+</div>
+</div>
+</section>
+
+<!-- 10. Footer -->
+<footer id="contact" style="background: #24160F; color: #E4D6C7">
+<div style="max-width: 1280px; margin: 0 auto; padding: 72px clamp(20px, 5vw, 48px) 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 40px 32px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: Outfit, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.02em; color: #FFFFFF; line-height: 1">SWEET <span style="font-weight: 500; font-size: 16px; letter-spacing: 0.14em">WORLD</span></span>
+<p style="margin: 0; font-size: 15px">Artisan chocolate and coffee. Flamingo, Addis Ababa.</p>
+<p style="margin: 0; font-size: 15px">[Street address]<br>[Phone number]<br>[Email address]</p>
+</div>
+<nav aria-label="Shop" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<h3 style="margin: 0 0 8px; font-family: Outfit, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F0C36A">Shop</h3>
+<a href="#shop" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Chocolate bars</a>
+<a href="#shop" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Spreads and jars</a>
+<a href="#shop" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Coffee beans</a>
+<a href="#shop" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Gifts</a>
+<a href="#subscriptions" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Subscriptions</a>
+</nav>
+<nav aria-label="Support" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<h3 style="margin: 0 0 8px; font-family: Outfit, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F0C36A">Support</h3>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Delivery and shipping</a>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Returns</a>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Track an order</a>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Manage subscription</a>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">FAQ</a>
+</nav>
+<nav aria-label="Café" style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+<h3 style="margin: 0 0 8px; font-family: Outfit, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F0C36A">Café</h3>
+<a href="#menu" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Menu</a>
+<a href="#story" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Our story</a>
+<a href="#locations" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Locations and hours</a>
+<a href="#experience" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Gallery</a>
+<a href="#contact" style="color: #E4D6C7; text-decoration: none; padding: 6px 0">Contact</a>
+</nav>
+</div>
+<div style="margin-top: 56px; padding-top: 24px; border-top: 1px solid #4A372C; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; font-size: 14px; color: #CDBBA9">
+<span>© 2026 Sweet World. All rights reserved.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+<a href="#contact" style="color: #CDBBA9; padding: 6px 0">Privacy</a>
+<a href="#contact" style="color: #CDBBA9; padding: 6px 0">Terms</a>
+<a href="#contact" style="color: #CDBBA9; padding: 6px 0">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7800}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { slide: 0, cart: {}, cat: 'all', branch: 'all', plan: 'coffee', qty: 2, freq: 'two', grind: 'whole', subscribed: false };
+}
+renderVals() {
+var self = this;
+var s = this.state;
+var INK = '#24160F';
+var chip = function (on) {
+return { on: on, bg: on ? INK : '#FFFFFF', fg: on ? '#FFFFFF' : INK, bd: on ? INK : '#C9B8A6' };
+};
+var slides = [
+{ kicker: 'Artisan chocolate and coffee · Addis Ababa', title: 'Chocolate made slowly. Coffee poured warm.', body: 'A bright corner at Flamingo for single-origin chocolate, Ethiopian espresso and an unhurried hour.', img: '../img/counter.jpg', alt: 'Marble counter under hexagonal lights with arched, backlit shelves', pos: '45% 50%' },
+{ kicker: 'New on the shelf', title: 'Single-origin bars, wrapped by hand.', body: 'Our artisan chocolate bars are in. Taste them at the counter or order a box for home.', img: '../img/pastries.jpg', alt: 'Artisan chocolate bar beside coffee beans', pos: '40% 50%' },
+{ kicker: 'Visit us', title: 'The lights are on at Flamingo.', body: 'Glass on two sides, booths inside, parking out front. Come by after work.', img: '../img/counter.jpg', alt: 'Café storefront glowing at dusk', pos: '62% 50%' }
+];
+var n = slides.length;
+var dots = slides.map(function (x, i) {
+var on = i === s.slide;
+return { label: 'Show slide ' + (i + 1), w: on ? '36px' : '12px', bg: on ? '#8A4016' : '#C9B8A6', go: function () { self.setState({ slide: i }); } };
+});
+var catDefs = [
+{ id: 'all', label: 'All' },
+{ id: 'bars', label: 'Chocolate bars' },
+{ id: 'spreads', label: 'Spreads and jars' },
+{ id: 'coffee', label: 'Coffee beans' },
+{ id: 'gifts', label: 'Snacks and gifts' },
+{ id: 'ware', label: 'Drinkware' }
+];
+var catName = {};
+catDefs.forEach(function (c) { catName[c.id] = c.label; });
+var cats = catDefs.map(function (c) {
+var o = chip(s.cat === c.id);
+o.label = c.label;
+o.pick = function () { self.setState({ cat: c.id }); };
+return o;
+});
+var SH = '../img/shelves.jpg';
+var BAR = '../img/pastries.jpg';
+var all = [
+{ id: 'bar', cat: 'bars', name: 'Artisan Dark Bar', meta: 'Single origin · [cacao %] · [weight]', img: BAR, alt: 'Artisan chocolate bar in kraft wrapper', w: '220%', x: '-40.2%', y: '-24.3%' },
+{ id: 'boxbars', cat: 'bars', name: 'Milk Chocolate Bar Box', meta: '[Count] bars · [tasting notes]', img: SH, alt: 'Boxes of chocolate bars on a shelf', w: '420%', x: '-210.4%', y: '-168.4%' },
+{ id: 'jar', cat: 'spreads', name: 'Chocolate Spread Jar', meta: '[Flavour] · [weight]', img: SH, alt: 'Row of chocolate spread jars', w: '420%', x: '-212.5%', y: '-86.3%' },
+{ id: 'tub', cat: 'spreads', name: 'Family Chocolate Tub', meta: 'For sharing · [weight]', img: SH, alt: 'Red tubs of chocolate spread', w: '420%', x: '-210.4%', y: '-127.3%', low: true },
+{ id: 'beans', cat: 'coffee', name: 'House Espresso Beans', meta: '[Region], Ethiopia · [notes] · [weight]', img: BAR, alt: 'Roasted coffee beans on marble', w: '280%', x: '-146%', y: '-58.2%', grind: true },
+{ id: 'pouch', cat: 'gifts', name: 'Chocolate Snack Pouch', meta: '[Variety] · [weight]', img: SH, alt: 'Colourful snack pouches on a shelf', w: '320%', x: '-30%', y: '-52.4%' },
+{ id: 'gift', cat: 'gifts', name: 'Gift Assortment', meta: 'Boxed selection · [count] pieces', img: SH, alt: 'Red and purple gift boxes of chocolate', w: '420%', x: '-298.6%', y: '-168.4%' },
+{ id: 'cup', cat: 'ware', name: 'Sweet World Cup'.replace('&amp;', '&'), meta: 'Ceramic · [volume]', img: '', alt: '' }
+];
+var products = all.filter(function (p) { return s.cat === 'all' || p.cat === s.cat; }).map(function (p) {
+var q = s.cart[p.id] || 0;
+return {
+name: p.name, meta: p.meta, catLabel: catName[p.cat], img: p.img, alt: p.alt, w: p.w, x: p.x, y: p.y,
+hasImg: !!p.img, noImg: !p.img, low: !!p.low, grind: !!p.grind,
+btnLabel: q ? 'Added · ' + q : 'Add to cart', btnBg: q ? INK : '#FFFFFF', btnFg: q ? '#FFFFFF' : INK,
+add: function () {
+var c = Object.assign({}, self.state.cart);
+c[p.id] = (c[p.id] || 0) + 1;
+self.setState({ cart: c });
+}
+};
+});
+var cartCount = Object.keys(s.cart).reduce(function (t, k) { return t + s.cart[k]; }, 0);
+var planDefs = [
+{ id: 'coffee', label: 'Coffee', sub: 'Fresh beans', unit: 'bag' },
+{ id: 'choc', label: 'Chocolate', sub: 'Bars and bites', unit: 'box' },
+{ id: 'both', label: 'Both', sub: 'Coffee + chocolate', unit: 'set' }
+];
+var plan = planDefs.filter(function (p) { return p.id === s.plan; })[0];
+var plans = planDefs.map(function (p) {
+var on = p.id === s.plan;
+return { label: p.label, sub: p.sub, on: on, bg: on ? '#FFFFFF' : '#FBF8F3', bd: on ? '#8A4016' : '#D9CCBE', pick: function () { self.setState({ plan: p.id }); } };
+});
+var freqDefs = [{ id: 'week', label: 'Every week' }, { id: 'two', label: 'Every 2 weeks' }, { id: 'month', label: 'Every month' }];
+var freqs = freqDefs.map(function (f) {
+var o = chip(f.id === s.freq);
+o.label = f.label;
+o.pick = function () { self.setState({ freq: f.id }); };
+return o;
+});
+var grindDefs = [{ id: 'whole', label: 'Whole bean' }, { id: 'esp', label: 'Espresso' }, { id: 'filter', label: 'Filter' }, { id: 'jebena', label: 'Jebena (fine)' }];
+var grinds = grindDefs.map(function (g) {
+var o = chip(g.id === s.grind);
+o.label = g.label;
+o.pick = function () { self.setState({ grind: g.id }); };
+return o;
+});
+var showGrind = s.plan !== 'choc';
+var unit = plan.unit + (s.qty === 1 ? '' : (plan.unit === 'box' ? 'es' : 's'));
+var freqLabel = freqDefs.filter(function (f) { return f.id === s.freq; })[0].label.toLowerCase();
+var grindLabel = grindDefs.filter(function (g) { return g.id === s.grind; })[0].label.toLowerCase();
+var planSummary = s.qty + ' ' + unit + ' of ' + (s.plan === 'both' ? 'coffee and chocolate' : plan.label.toLowerCase()) + (showGrind ? ', ' + grindLabel : '') + ', ' + freqLabel;
+var branchFilters = [{ id: 'all', label: 'All branches' }, { id: 'open', label: 'Open now' }].map(function (f) {
+var o = chip(f.id === s.branch);
+o.label = f.label;
+o.pick = function () { self.setState({ branch: f.id }); };
+return o;
+});
+return {
+hero: slides[s.slide],
+dots: dots,
+prevSlide: function () { self.setState({ slide: (s.slide + n - 1) % n }); },
+nextSlide: function () { self.setState({ slide: (s.slide + 1) % n }); },
+cats: cats,
+products: products,
+cartCount: cartCount,
+cartLabel: cartCount === 1 ? 'item' : 'items',
+plans: plans,
+freqs: freqs,
+grinds: grinds,
+showGrind: showGrind,
+qtyLabel: s.qty + ' ' + unit,
+qtyDown: function () { self.setState({ qty: Math.max(1, s.qty - 1) }); },
+qtyUp: function () { self.setState({ qty: Math.min(6, s.qty + 1) }); },
+planSummary: planSummary,
+branchFilters: branchFilters,
+showAllBranches: s.branch === 'all',
+subscribed: s.subscribed,
+notSubscribed: !s.subscribed,
+subscribe: function (e) { if (e && e.preventDefault) { e.preventDefault(); } self.setState({ subscribed: true }); }
+};
+}
+}
+</script>
+</body>
+</html>

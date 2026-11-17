@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Home</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Newsreader:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com/3.4.16"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#673d15", "on-background": "#231917", "surface-tint": "#944655", "on-error-container": "#93000a", "secondary-container": "#febf8d", "tertiary-fixed": "#ede1d0", "surface-container-lowest": "#ffffff", "inverse-surface": "#392e2b", "surface-dim": "#e8d6d1", "secondary-fixed-dim": "#f8ba88", "error": "#ba1a1a", "surface-container": "#fdeae5", "surface-variant": "#f1dfda", "inverse-on-surface": "#ffede8", "outline": "#867274", "on-surface-variant": "#534345", "on-tertiary-fixed": "#201b11", "primary": "#4e0f20", "on-secondary-container": "#794c23", "inverse-primary": "#ffb2be", "surface-bright": "#fff8f6", "on-secondary-fixed": "#2e1500", "surface-container-high": "#f7e4df", "surface-container-highest": "#f1dfda", "surface": "#fff8f6", "surface-container-low": "#fff1ed", "on-primary": "#ffffff", "on-error": "#ffffff", "tertiary": "#2c261b", "background": "#fff8f6", "on-tertiary-fixed-variant": "#4d4639", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#762f3f", "tertiary-container": "#433c30", "on-tertiary": "#ffffff", "secondary-fixed": "#ffdcc2", "secondary": "#82542a", "on-tertiary-container": "#b1a697", "on-primary-fixed": "#3e0315", "outline-variant": "#d8c1c3", "primary-fixed": "#ffd9de", "primary-container": "#6a2535", "primary-fixed-dim": "#ffb2be", "tertiary-fixed-dim": "#d0c5b5", "error-container": "#ffdad6", "on-primary-container": "#ea8d9d", "on-surface": "#231917" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "space-lg": "1.75rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "margin": "3rem", "gutter": "1.5rem", "space-xl": "3rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-lg": ["Newsreader"], "body-md": ["Inter"], "title-md": ["Newsreader"], "display-lg-mobile": ["Newsreader"], "headline-md": ["Newsreader"], "headline-sm": ["Newsreader"], "display-lg": ["Newsreader"], "label-md": ["Inter"], "label-caps": ["Inter"], "headline-lg-mobile": ["Newsreader"], "body-lg": ["Inter"], "body-sm": ["Inter"] }, "fontSize": { "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }], "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "500" }], "headline-sm": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }], "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; background-color: #fff8f6; } body { -webkit-font-smoothing: antialiased; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-margin-mobile flex items-center justify-between"><div class="flex flex-col justify-center select-none"><span class="font-['Fraunces'] text-[21px] leading-tight font-semibold tracking-tight text-primary">Sweet World</span><span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] mt-0.5">FLAMINGO · ADDIS ABABA</span></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><button aria-label="Open Menu" class="w-11 h-11 flex items-center justify-center text-primary active:scale-95 transition-transform" id="menu-open-btn" type="button"><span class="material-symbols-outlined text-[26px]">menu</span></button></div></div></header><div class="fixed inset-0 z-[60] pointer-events-none transition-opacity duration-300 opacity-0 bg-inverse-surface/40 backdrop-blur-sm" id="mobile-drawer"><div class="absolute top-0 right-0 w-[82%] max-w-[340px] h-full bg-surface-container-low p-margin-mobile pt-safe flex flex-col justify-between shadow-2xl transition-transform duration-300 translate-x-full" id="mobile-drawer-panel"><div class="flex flex-col"><div class="flex items-center justify-between pb-space-md"><div class="flex flex-col"><span class="font-['Fraunces'] text-[20px] font-semibold text-primary leading-none">Sweet World</span><span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mt-1">Flamingo Branch</span></div><button aria-label="Close Menu" class="w-11 h-11 flex items-center justify-center text-on-surface-variant active:scale-95" id="menu-close-btn" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="h-[1px] w-full bg-surface-variant my-space-sm"></div><nav class="flex flex-col gap-space-xs mt-space-sm" data-active-classes="text-primary font-medium pl-space-sm"><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="home" href="#">Home</a><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="menu" href="#">Menu</a><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="our-story" href="#">Our Story</a><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="gallery" href="#">Gallery</a><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="visit-us" href="#">Visit Us</a><a class="h-12 flex items-center font-title-md text-title-md text-on-surface-variant hover:text-primary transition-all" data-path="contact" href="#">Contact</a></nav></div><div class="flex flex-col gap-space-md pb-safe"><a class="h-12 px-space-lg rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 active:bg-primary shadow-[0_8px_24px_-4px_rgba(106,37,53,0.2)] transition-colors" data-path="visit-us" href="#"><span class="material-symbols-outlined text-[18px]">directions</span><span>Get Directions</span></a><p class="font-label-caps text-label-caps text-outline text-center uppercase tracking-wider">Bole Road · Flamingo Area</p></div></div></div><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-[calc(100vh-5rem)]"><div class="flex flex-col w-full">
+<!-- Hero / Introduction Context -->
+<section class="px-margin-mobile pt-space-md pb-space-lg">
+<div class="flex items-center gap-2 mb-space-xs">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em]">SWEET WORLD · FLAMINGO</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-semibold tracking-tight mt-1 mb-space-sm font-['Fraunces']">
+      Find your favorite.
+    </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Crafted with premium Ethiopian coffee beans and freshly baked daily in Addis Ababa. Savor our signature cakes, handcrafted pastries, and traditional &amp; modern coffee drinks.
+    </p>
+<!-- Warm Aesthetic Accent Banner -->
+<div class="mt-space-md p-space-md rounded-DEFAULT bg-surface-container flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Morning Batch Ready</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Single origins brewed from 7:00 AM</span>
+</div>
+</div>
+<span class="font-label-caps text-[10px] px-2.5 py-1 rounded-full bg-surface text-primary font-semibold">FRESH</span>
+</div>
+</section>
+<!-- Sticky Category Filter Pill Bar -->
+<div class="sticky top-20 z-40 bg-surface/95 backdrop-blur-md py-space-sm px-margin-mobile shadow-[0_4px_16px_-4px_rgba(35,25,23,0.04)]">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="filter-container">
+<button class="filter-tab shrink-0 h-11 px-5 rounded-full font-label-md text-label-md transition-all duration-200 active:scale-95 bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5" data-filter="all" type="button">
+<span>All Offerings</span>
+<span class="text-[11px] px-1.5 py-0.5 rounded-full bg-white/20 font-semibold">16</span>
+</button>
+<button class="filter-tab shrink-0 h-11 px-5 rounded-full font-label-md text-label-md transition-all duration-200 active:scale-95 bg-surface-container-high text-on-surface flex items-center gap-1.5" data-filter="coffee" type="button">
+<span class="material-symbols-outlined text-[18px]">coffee</span>
+<span>Coffee &amp; Specialty</span>
+</button>
+<button class="filter-tab shrink-0 h-11 px-5 rounded-full font-label-md text-label-md transition-all duration-200 active:scale-95 bg-surface-container-high text-on-surface flex items-center gap-1.5" data-filter="dessert" type="button">
+<span class="material-symbols-outlined text-[18px]">cake</span>
+<span>Cakes &amp; Desserts</span>
+</button>
+</div>
+</div>
+<!-- Menu Item Showcase -->
+<div class="px-margin-mobile flex flex-col gap-space-xl pt-space-md">
+<!-- Section 1: Coffee & Specialty Drinks -->
+<section class="menu-section flex flex-col gap-space-md" data-category="coffee">
+<div class="flex flex-col gap-1 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_cafe</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.16em]">Curated Origins &amp; Roasts</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary font-['Fraunces']">
+          Coffee &amp; Teas
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Heirloom beans freshly roasted, pulled on our manual lever machines.</p>
+</div>
+<!-- Item List Container -->
+<div class="flex flex-col gap-space-sm">
+<!-- Coffee Item 1 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Ethiopian Single Origin Pour-Over","category":"Curated Origins &amp; Roasts","price":"120 ETB","numericPrice":120,"description":"Fresh Yirgacheffe &amp; Sidama beans with distinct floral jasmine and citrus notes. Hand-brewed with precise extraction for clarity and sweetness.","flavorProfile":"Jasmine Blossom, Bergamot Citrus, Wild Flower Honey, Crisp Lemon Finish","dietary":["100% Arabica","Gluten-Free","Dairy-Free","Vegan"],"prep":"V60 Pour-over · 4 mins brew · Served at 88°C","optionsLabel":"Roast &amp; Origin Selection","options":["Yirgacheffe Gedeb (Washed)","Sidama Bensa (Natural)","Guji Hambela (+15 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Ethiopian Single Origin Pour-Over
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              120 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Fresh Yirgacheffe &amp; Sidama beans with distinct floral and citrus notes.
+          </p>
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-medium tracking-wide">
+              Heirloom Variety
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary text-[11px] font-medium">
+              Light-Medium Roast
+            </span>
+</div>
+</article>
+<!-- Coffee Item 2 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Sweet World Signature Macchiato","category":"Curated Origins &amp; Roasts","badge":"Flamingo Favorite","price":"95 ETB","numericPrice":95,"description":"Traditional Addis-style double-shot espresso layered with silky steamed whole milk and velvety microfoam crown.","flavorProfile":"Rich Dark Cocoa, Caramelized Sugar, Roasted Hazelnut, Velvety Finish","dietary":["Vegetarian","Gluten-Free"],"prep":"Double Shot Espresso · Handcrafted Steamed Milk · Served at 65°C","optionsLabel":"Milk &amp; Customization","options":["Full Cream Whole Milk","Low-Fat Milk","Oat Milk (+20 ETB)","Extra Shot Espresso (+25 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<div class="flex flex-col">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+                Sweet World Signature Macchiato
+              </h3>
+</div>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              95 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Traditional Addis-style double-shot espresso layered with silky steamed whole milk.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+              Flamingo Favorite
+            </span>
+</div>
+</article>
+<!-- Coffee Item 3 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Classic Cappuccino","category":"Curated Origins &amp; Roasts","price":"110 ETB","numericPrice":110,"description":"Rich balanced espresso with velvety micro-foam and a dusting of aromatic Dutch cocoa powder.","flavorProfile":"Bittersweet Cocoa, Toasted Almond, Creamy Caramel","dietary":["Vegetarian","Gluten-Free"],"prep":"Double Ristretto · Dense Foam Layer · Cocoa Finish","optionsLabel":"Milk Preference","options":["Standard Fresh Milk","Oat Milk (+20 ETB)","Soy Milk (+15 ETB)","Cinnamon Sprinkle"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Classic Cappuccino
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              110 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Rich espresso balanced with velvety micro-foam and an aromatic fine cocoa dusting.
+          </p>
+</article>
+<!-- Coffee Item 4 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Caramel Velvet Latte","category":"Curated Origins &amp; Roasts","price":"140 ETB","numericPrice":140,"description":"Slow-cooked house caramel syrup, concentrated espresso, and creamy steamed milk topped with fine sea salt crunch.","flavorProfile":"Buttery Toffee, Burnt Sugar, Smooth Sweet Espresso","dietary":["Vegetarian","Gluten-Free"],"prep":"House Artisanal Syrup · Steamed Whole Milk · 350ml Cup","optionsLabel":"Customization","options":["Regular Sweetness","Less Sweet (50%)","Oat Milk (+20 ETB)","Whipped Cream Topping"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Caramel Velvet Latte
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              140 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Slow-cooked house caramel syrup, concentrated espresso, and creamy steamed milk.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-medium">
+              House Syrup
+            </span>
+</div>
+</article>
+<!-- Coffee Item 5 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Iced Americano","category":"Curated Origins &amp; Roasts","price":"100 ETB","numericPrice":100,"description":"Chilled double espresso pulled fresh and poured over purified mountain ice and spring water. Incredibly clean and refreshing.","flavorProfile":"Stone Fruit, Dark Cherry, Clean Citrus Acidity","dietary":["Vegan","Dairy-Free","Gluten-Free","Zero Sugar"],"prep":"Double Espresso Over Mountain Crystal Ice · 400ml Cold Tumbler","optionsLabel":"Preparation Options","options":["Classic Black","Light Ice","Extra Splash Of Cold Water","Add House Lemon Twist"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Iced Americano
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              100 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Chilled double espresso pulled fresh and poured over purified mountain ice and spring water.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-medium">
+              Chilled &amp; Crisp
+            </span>
+</div>
+</article>
+<!-- Coffee Item 6 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Cold Brew Reserve","category":"Curated Origins &amp; Roasts","badge":"Reserve Selection","price":"130 ETB","numericPrice":130,"description":"Slow-steeped in small batches for 18 hours for maximum smoothness and delicate, ultra-low acid chocolate sweetness.","flavorProfile":"Dark Chocolate Ganache, Ripe Plum, Vanilla Bean, Molasses","dietary":["Vegan","Gluten-Free","Sugar-Free","Dairy-Free"],"prep":"18-Hour Cold Extraction · Triple Filtered · Served Chilled over Cube","optionsLabel":"Serving Style","options":["Neat Over Large Cube","With Splash Of Cold Whole Milk","With Vanilla Sweet Cream (+20 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Cold Brew Reserve
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              130 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Slow-steeped in small batches for 18 hours for maximum smoothness and delicate, low-acid sweetness.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-medium">
+              18-Hour Maceration
+            </span>
+</div>
+</article>
+<!-- Coffee Item 7 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Café Mocha","category":"Curated Origins &amp; Roasts","price":"145 ETB","numericPrice":145,"description":"Rich espresso delicately blended with melted artisanal 70% dark chocolate and gently warmed velvety milk.","flavorProfile":"Melted Dark Cocoa, Roasted Espresso, Creamy Vanilla Finish","dietary":["Vegetarian","Gluten-Free"],"prep":"Hand-melted Dark Chocolate Ganache · Espresso Blend · Silky Milk","optionsLabel":"Milk &amp; Chocolate Options","options":["Whole Milk","Oat Milk (+20 ETB)","Extra Chocolate Drizzle","Whipped Sweet Cream (+15 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Café Mocha
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              145 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Espresso delicately blended with melted artisanal dark chocolate and gently warmed milk.
+          </p>
+</article>
+<!-- Coffee Item 8 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Spiced Chai Tea Latte","category":"Curated Origins &amp; Roasts","price":"115 ETB","numericPrice":115,"description":"Fragrant full-leaf black tea infused with cardamom pods, cinnamon bark, fresh ginger, clove, and honeyed whole milk.","flavorProfile":"Warming Cardamom, Ceylon Cinnamon, Spicy Ginger, Wild Honey","dietary":["Vegetarian","Gluten-Free"],"prep":"Slow Simmered Whole Spices · Sweetened with Ethiopian Highland Honey","optionsLabel":"Customization","options":["Full Honey Sweetness","Mild Honey","Oat Milk Chai (+20 ETB)","Dirty Chai (+Double Espresso Shot, +25 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Spiced Chai Tea Latte
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              115 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Fragrant full-leaf black tea infused with cardamom, cinnamon, clove, and honeyed whole milk.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed-variant text-[11px] font-medium">
+              Whole Spice Infusion
+            </span>
+</div>
+</article>
+</div>
+</section>
+<!-- Visual Divider & Vitrine Highlight Feature -->
+<section class="rounded-DEFAULT bg-surface-container-high p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="relative w-full h-44 rounded-DEFAULT overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An artisanal European style patisserie glass vitrine filled with tiered chocolate mousse cakes, fresh strawberry tarts, layered mille-feuille and decorated cheesecakes in a warm ambient café in Addis Ababa. Soft golden hour lighting highlights glossy mirror glazes, golden brown puff pastry, and powdered sugar dusting." src="../img/13da46ec51ef.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary-fixed uppercase tracking-wider">The Flamingo Vitrine</span>
+<span class="font-['Fraunces'] text-[18px] text-surface font-semibold leading-tight">Pastry as an art of celebration.</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Whole cakes available for custom orders &amp; events</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fresh gluten-conscious and dairy-free options daily</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Takeaway boxes &amp; celebration gift packaging available</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Cakes & Handcrafted Desserts -->
+<section class="menu-section flex flex-col gap-space-md" data-category="dessert">
+<div class="flex flex-col gap-1 pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">bakery_dining</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.16em]">Baked Fresh This Morning</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary font-['Fraunces']">
+          Cakes &amp; Desserts
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Handcrafted in our Flamingo kitchen with pure European butter and local cream.</p>
+</div>
+<!-- Dessert Items -->
+<div class="flex flex-col gap-space-sm">
+<!-- Cake Item 1 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Signature Chocolate Mousse Cake","category":"Baked Fresh This Morning","badge":"Pastry Chef Signature","price":"240 ETB","numericPrice":240,"description":"Layers of airy dark chocolate mousse perched on a delicate cocoa sponge base, finished with glistening mirror glaze and gold leaf.","flavorProfile":"70% Valrhona Dark Ganache, Delicate Cocoa Sponge, Silky Mousse","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Chilled Vitrine Fresh Daily · Sliced to order · Kept at 4°C","optionsLabel":"Serving &amp; Packaging","options":["Dine-In Fresh Plated","Takeaway Celebration Box (+15 ETB)","Birthday Candle &amp; Plaque (+20 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Signature Chocolate Mousse Cake
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              240 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Layers of airy dark chocolate mousse perched on a delicate cocoa sponge base, finished with mirror glaze.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+              Pastry Chef Signature
+            </span>
+</div>
+</article>
+<!-- Cake Item 2 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Strawberry Fresh Tart","category":"Baked Fresh This Morning","badge":"Seasonal Highland Fruit","price":"220 ETB","numericPrice":220,"description":"Crisp French butter pastry shell generously filled with velvety Madagascar vanilla bean pastry cream and loaded with sweet handpicked highland strawberries.","flavorProfile":"Sweet Mountain Berries, Bourbon Vanilla Custard, Butter Shortcrust","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Assembled Daily at 6:30 AM · Glazed with Strawberry Puree","optionsLabel":"Options","options":["Dine-In Plated","Takeaway Pastry Box","Extra Vanilla Cream Dollop (+15 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Strawberry Fresh Tart
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              220 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Crisp French butter pastry shell generously filled with vanilla pastry cream and fresh highland strawberries.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-medium">
+              Seasonal Highland Fruit
+            </span>
+</div>
+</article>
+<!-- Cake Item 3 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Artisanal Mille-Feuille","category":"Baked Fresh This Morning","price":"210 ETB","numericPrice":210,"description":"Three layers of delicate caramelized flaky puff pastry sandwiched with rich bourbon vanilla bean diplomat cream, finished with traditional feathered icing.","flavorProfile":"Caramelized Golden Puff Pastry, Bourbon Vanilla Cream, Fondant","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Inverted French Puff Pastry Baked Every Morning at Dawn","optionsLabel":"Packaging &amp; Extras","options":["Dine-In with Powdered Sugar","Takeaway Individual Box","Pair with Hot Macchiato (+95 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Artisanal Mille-Feuille
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              210 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Caramelized flaky puff pastry layers with bourbon vanilla bean custard and traditional feathered fondant.
+          </p>
+</article>
+<!-- Cake Item 4 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Classic Baked Cheesecake","category":"Baked Fresh This Morning","price":"250 ETB","numericPrice":250,"description":"Dense and velvety New York style cream cheese cake on a graham butter base, complemented by a tart house strawberry &amp; wild berry compote garnish.","flavorProfile":"Tangy Cream Cheese, Graham Butter Crust, Tart Wild Berry Compote","dietary":["Vegetarian","Contains Dairy","Contains Gluten"],"prep":"Slow Water-Bath Baked for 90 Minutes · Chilled 12 Hours","optionsLabel":"Serving Options","options":["Wild Berry Compote (Standard)","Warm Salted Caramel Drizzle","Plain Classic NY Style"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Classic Baked Cheesecake
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              250 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Dense and velvety New York style cream cheese cake complemented by a tart house strawberry compote garnish.
+          </p>
+</article>
+<!-- Cake Item 5 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Custard Layer Cake","category":"Baked Fresh This Morning","price":"190 ETB","numericPrice":190,"description":"Feather-light sponge cake layered with silky golden custard cream, soaked lightly with citrus blossom essence, and finished with a powdered sugar veil.","flavorProfile":"Light Chiffon Sponge, Golden Custard, Lemon Blossom Kiss","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Daily Small Batch Chiffon Sponge · Whipped Fresh Custard","optionsLabel":"Serving Style","options":["Classic Dine-in Slice","Takeaway Box with Fork","Whole Cake Pre-Order Available"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Custard Layer Cake
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              190 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Feather-light sponge cake layered with silky golden custard cream and a light powdered sugar veil.
+          </p>
+</article>
+<!-- Cake Item 6 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Tiramisu Classico","category":"Baked Fresh This Morning","price":"230 ETB","numericPrice":230,"description":"Espresso-soaked Savoiardi ladyfingers folded with rich whipped mascarpone cream and dusted with fine Dutch cocoa powder. Made with fresh Yirgacheffe espresso.","flavorProfile":"Yirgacheffe Espresso Soak, Whipped Mascarpone, Bittersweet Cocoa","dietary":["Vegetarian","Contains Dairy","Contains Gluten","Contains Coffee"],"prep":"Layered in Artisanal Glass Dish · Infused 8 Hours for Peak Flavor","optionsLabel":"Customization","options":["Standard Single Cup/Slice","Takeaway Gift Cup","Extra Cocoa Dusting"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Tiramisu Classico
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              230 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Espresso-soaked Savoiardi ladyfingers folded with rich whipped mascarpone cream and dusted with Dutch cocoa.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-medium">
+              Made with Yirgacheffe Espresso
+            </span>
+</div>
+</article>
+<!-- Cake Item 7 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Chocolate Truffle Tart","category":"Baked Fresh This Morning","badge":"Reserve Selection","price":"260 ETB","numericPrice":260,"description":"Decadent 70% dark Belgian ganache tart enriched with crunchy roasted cocoa nibs, flaky sea salt, and an edible delicate 24k gold leaf accent.","flavorProfile":"Deep Belgian Truffle, Roasted Cocoa Nibs, Sea Salt Crunch","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Pure Cocoa Butter Sablé Shell · Hand-Emulsified Ganache","optionsLabel":"Serving Preference","options":["Room Temperature (Silky Melt)","Chilled (Firm Truffle)","Takeaway Deluxe Gift Box (+20 ETB)"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Chocolate Truffle Tart
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              260 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Decadent 70% dark ganache tart enriched with crunchy cocoa nibs and an edible delicate gold leaf accent.
+          </p>
+<div class="flex items-center gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[11px] font-semibold">
+              Reserve Selection
+            </span>
+</div>
+</article>
+<!-- Cake Item 8 -->
+<article class="menu-item-card p-space-md rounded-DEFAULT bg-surface-container-lowest shadow-sm flex flex-col gap-2 cursor-pointer transition-all duration-200 active:scale-[0.98] hover:shadow-md ring-1 ring-black/5 hover:ring-primary/20" data-item='{"title":"Oreo Cream Cheesecake","category":"Baked Fresh This Morning","price":"240 ETB","numericPrice":240,"description":"Crushed chocolate biscuit crust topped with airy cookies-and-cream cheesecake mousse, fresh dairy cream rosettes, and rich dark chocolate drizzle.","flavorProfile":"Dark Chocolate Biscuit Crunch, Cookies &amp; Cream Mousse, Velvety Ganache","dietary":["Vegetarian","Contains Gluten","Contains Dairy"],"prep":"Cold-set Mousse Technique · Hand-Decorated Daily","optionsLabel":"Packaging","options":["Individual Slice","Celebration Slice with Candle (+15 ETB)","Takeaway Box"]}'>
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-['Fraunces'] text-[17px] leading-snug font-semibold text-on-surface">
+              Oreo Cream Cheesecake
+            </h3>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold tracking-tight">
+              240 ETB
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Crushed chocolate biscuit crust topped with airy cookies-and-cream cheesecake mousse and chocolate drizzle.
+          </p>
+</article>
+</div>
+</section>
+<!-- Visit Us Callout Card -->
+<section class="rounded-DEFAULT bg-surface-container p-space-lg flex flex-col gap-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.18em]">COME EXPERIENCE</span>
+<h2 class="font-['Fraunces'] text-[22px] font-semibold text-primary leading-tight">
+          Drop by Flamingo branch today.
+        </h2>
+</div>
+<!-- Schedule & Info -->
+<div class="flex flex-col gap-2.5 bg-surface-container-lowest/80 p-space-md rounded-DEFAULT">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">schedule</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[15px] text-on-surface font-semibold">Mon – Sun: 7:00 AM – 10:00 PM</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hot breakfast &amp; espresso all day</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 pt-1">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">place</span>
+<div class="flex flex-col">
+<span class="font-title-md text-[15px] text-on-surface font-semibold">Flamingo Area, Bole Road</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Africa Avenue, Addis Ababa, Ethiopia</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2.5 pt-1">
+<a class="w-full h-12 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 active:bg-primary shadow-[0_8px_20px_-4px_rgba(106,37,53,0.3)] transition-all" href="https://www.google.com/maps/search/?api=1&amp;query=9.0091962,38.7639797" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Get Directions</span>
+</a>
+<a class="w-full h-12 rounded-full bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-2 active:bg-surface-variant transition-colors" href="tel:+251115500000">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Flamingo Branch (+251 11 550 0000)</span>
+</a>
+</div>
+</section>
+</div>
+<!-- Interactive Filtering Script -->
+<script>
+    (function initMenuFilters() {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const sections = document.querySelectorAll('.menu-section');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const filter = tab.getAttribute('data-filter');
+
+          // Style tabs
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+            t.classList.add('bg-surface-container-high', 'text-on-surface');
+          });
+          tab.classList.remove('bg-surface-container-high', 'text-on-surface');
+          tab.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+
+          // Filter sections
+          sections.forEach(sec => {
+            const cat = sec.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              sec.style.display = 'flex';
+            } else {
+              sec.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[54px] min-h-[44px] text-on-surface-variant transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">storefront</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-[10px]">Home</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[54px] min-h-[44px] text-on-surface-variant transition-colors" data-path="menu" href="#"><span class="material-symbols-outlined text-[22px]">bakery_dining</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-[10px]">Menu</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[54px] min-h-[44px] text-on-surface-variant transition-colors" data-path="gallery" href="#"><span class="material-symbols-outlined text-[22px]">photo_camera</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-[10px]">Gallery</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[54px] min-h-[44px] text-on-surface-variant transition-colors" data-path="visit-us" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-caps text-label-caps uppercase tracking-wider text-[10px]">Visit</span></a></div></nav><script>const openBtn=document.getElementById('menu-open-btn');const closeBtn=document.getElementById('menu-close-btn');const drawer=document.getElementById('mobile-drawer');const panel=document.getElementById('mobile-drawer-panel');function toggleDrawer(open){if(open){drawer.classList.remove('pointer-events-none','opacity-0');drawer.classList.add('opacity-100');panel.classList.remove('translate-x-full');panel.classList.add('translate-x-0');}else{drawer.classList.remove('opacity-100');drawer.classList.add('opacity-0','pointer-events-none');panel.classList.remove('translate-x-0');panel.classList.add('translate-x-full');}}if(openBtn&&closeBtn&&drawer&&panel){openBtn.addEventListener('click',()=>toggleDrawer(true));closeBtn.addEventListener('click',()=>toggleDrawer(false));drawer.addEventListener('click',(e)=>{if(e.target===drawer)toggleDrawer(false);});}</script>
+<!-- Interactive Item Detail Bottom Sheet Modal -->
+<div aria-hidden="true" aria-modal="true" class="fixed inset-0 z-[70] pointer-events-none opacity-0 transition-opacity duration-300 bg-inverse-surface/50 backdrop-blur-sm flex flex-col justify-end" id="item-modal" role="dialog">
+<div class="w-full max-h-[88vh] bg-surface rounded-t-3xl shadow-2xl flex flex-col overflow-hidden transition-transform duration-300 translate-y-full border-t border-outline-variant/30" id="item-modal-container">
+<!-- Drag Handle Pill -->
+<div class="pt-3 pb-1 flex justify-center shrink-0">
+<div class="w-10 h-1.5 rounded-full bg-outline-variant/70"></div>
+</div>
+<!-- Modal Header -->
+<div class="px-margin-mobile pt-1 pb-3 flex items-center justify-between border-b border-surface-container-high shrink-0">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-[0.18em]" id="modal-category">Curated Origins</span>
+</div>
+<button aria-label="Close details" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors active:scale-95" id="modal-close-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Scrollable Content -->
+<div class="overflow-y-auto px-margin-mobile py-space-md flex flex-col gap-space-md pb-6">
+<!-- Title & Price Block -->
+<div class="flex justify-between items-start gap-3">
+<div class="flex flex-col gap-1.5">
+<h2 class="font-['Fraunces'] text-[24px] leading-tight font-semibold text-primary" id="modal-title">Item Title</h2>
+<div class="flex flex-wrap items-center gap-2" id="modal-badges"></div>
+</div>
+<span class="shrink-0 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-['Fraunces'] text-[18px] font-bold tracking-tight shadow-sm" id="modal-price">120 ETB</span>
+</div>
+<!-- Description -->
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="modal-desc"></p>
+<!-- Flavor Profile Card -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low border border-surface-container-high flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold">Flavor Profile &amp; Tasting Notes</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-normal italic" id="modal-flavor"></p>
+</div>
+<!-- Prep & Serving Details -->
+<div class="flex items-start gap-2.5 p-space-sm px-3 rounded-lg bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">timer</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-[11px] text-secondary uppercase tracking-wider font-semibold">Craft &amp; Serving</span>
+<span class="text-body-sm text-on-surface" id="modal-prep"></span>
+</div>
+</div>
+<!-- Dietary & Allergen Badges -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Dietary &amp; Ingredients</span>
+<div class="flex flex-wrap gap-1.5" id="modal-dietary"></div>
+</div>
+<!-- Customization / Size / Milk Selector -->
+<div class="flex flex-col gap-2 pt-1" id="modal-options-wrapper">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider font-semibold" id="modal-options-label">Preferences</span>
+<div class="grid grid-cols-1 gap-2" id="modal-options-list"></div>
+</div>
+<!-- Order / Call-to-action Button -->
+<div class="pt-2 flex flex-col gap-2 pb-safe">
+<button class="w-full h-13 py-3.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:bg-primary shadow-[0_8px_24px_-4px_rgba(106,37,53,0.35)] transition-all" id="modal-action-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span id="modal-action-text">Order at Flamingo Counter</span>
+</button>
+<p class="text-center font-label-caps text-[11px] text-outline">Freshly prepared at Flamingo Branch · Bole Road</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initItemModal() {
+    const modal = document.getElementById('item-modal');
+    const container = document.getElementById('item-modal-container');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const titleEl = document.getElementById('modal-title');
+    const categoryEl = document.getElementById('modal-category');
+    const priceEl = document.getElementById('modal-price');
+    const descEl = document.getElementById('modal-desc');
+    const flavorEl = document.getElementById('modal-flavor');
+    const prepEl = document.getElementById('modal-prep');
+    const badgesEl = document.getElementById('modal-badges');
+    const dietaryEl = document.getElementById('modal-dietary');
+    const optionsWrapper = document.getElementById('modal-options-wrapper');
+    const optionsLabelEl = document.getElementById('modal-options-label');
+    const optionsListEl = document.getElementById('modal-options-list');
+    const actionTextEl = document.getElementById('modal-action-text');
+    const actionBtn = document.getElementById('modal-action-btn');
+
+    function openModal(data) {
+      titleEl.textContent = data.title || '';
+      categoryEl.textContent = data.category || 'Flamingo Selection';
+      priceEl.textContent = data.price || '';
+      descEl.textContent = data.description || '';
+      flavorEl.textContent = data.flavorProfile || 'Subtle sweetness and harmonious notes crafted daily.';
+      prepEl.textContent = data.prep || 'Fresh daily craft';
+      actionTextEl.textContent = 'Order at Flamingo Counter (' + (data.price || '') + ')';
+
+      // Badges
+      badgesEl.innerHTML = '';
+      if (data.badge) {
+        const b = document.createElement('span');
+        b.className = 'px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-semibold flex items-center gap-1';
+        b.innerHTML = '<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: \'FILL\' 1;">star</span> ' + data.badge;
+        badgesEl.appendChild(b);
+      }
+
+      // Dietary
+      dietaryEl.innerHTML = '';
+      if (data.dietary && data.dietary.length) {
+        data.dietary.forEach(tag => {
+          const t = document.createElement('span');
+          t.className = 'px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-medium';
+          t.textContent = tag;
+          dietaryEl.appendChild(t);
+        });
+      }
+
+      // Options
+      if (data.options && data.options.length) {
+        optionsWrapper.classList.remove('hidden');
+        optionsLabelEl.textContent = data.optionsLabel || 'Customization & Add-ons';
+        optionsListEl.innerHTML = '';
+        data.options.forEach((opt, idx) => {
+          const optBtn = document.createElement('button');
+          optBtn.type = 'button';
+          const isSelected = idx === 0;
+          optBtn.className = 'flex items-center justify-between p-3 rounded-lg border text-left transition-all text-body-sm ' +
+            (isSelected
+              ? 'border-primary bg-primary-fixed/30 text-on-surface font-medium'
+              : 'border-outline-variant/50 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container');
+          optBtn.innerHTML = `
+            <div class="flex items-center gap-2.5">
+              <span class="w-4 h-4 rounded-full border flex items-center justify-center ${isSelected ? 'border-primary' : 'border-outline'}">
+                <span class="w-2 h-2 rounded-full ${isSelected ? 'bg-primary' : 'bg-transparent'}"></span>
+              </span>
+              <span>${opt}</span>
+            </div>
+          `;
+          optBtn.addEventListener('click', () => {
+            Array.from(optionsListEl.children).forEach(child => {
+              child.className = 'flex items-center justify-between p-3 rounded-lg border text-left transition-all text-body-sm border-outline-variant/50 bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container';
+              const dot = child.querySelector('span > span');
+              const circle = child.querySelector('span');
+              if (circle) circle.className = 'w-4 h-4 rounded-full border flex items-center justify-center border-outline';
+              if (dot) dot.className = 'w-2 h-2 rounded-full bg-transparent';
+            });
+            optBtn.className = 'flex items-center justify-between p-3 rounded-lg border text-left transition-all text-body-sm border-primary bg-primary-fixed/30 text-on-surface font-medium';
+            const dot = optBtn.querySelector('span > span');
+            const circle = optBtn.querySelector('span');
+            if (circle) circle.className = 'w-4 h-4 rounded-full border flex items-center justify-center border-primary';
+            if (dot) dot.className = 'w-2 h-2 rounded-full bg-primary';
+          });
+          optionsListEl.appendChild(optBtn);
+        });
+      } else {
+        optionsWrapper.classList.add('hidden');
+      }
+
+      // Show Modal
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.remove('pointer-events-none', 'opacity-0');
+      modal.classList.add('opacity-100');
+      container.classList.remove('translate-y-full');
+      container.classList.add('translate-y-0');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      container.classList.remove('translate-y-0');
+      container.classList.add('translate-y-full');
+      document.body.style.overflow = '';
+    }
+
+    // Attach click events on menu item cards
+    document.querySelectorAll('.menu-item-card').forEach(card => {
+      card.addEventListener('click', () => {
+        try {
+          const itemData = JSON.parse(card.getAttribute('data-item'));
+          openModal(itemData);
+        } catch (e) {
+          console.error('Error parsing item details', e);
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    actionBtn.addEventListener('click', () => {
+      const origText = actionTextEl.textContent;
+      actionTextEl.textContent = 'Added to Tasting Order ✓';
+      actionBtn.classList.remove('bg-primary-container');
+      actionBtn.classList.add('bg-secondary');
+      setTimeout(() => {
+        closeModal();
+        actionTextEl.textContent = origText;
+        actionBtn.classList.remove('bg-secondary');
+        actionBtn.classList.add('bg-primary-container');
+      }, 700);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+</script>
+</body></html>
